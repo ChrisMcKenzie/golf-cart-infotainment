@@ -1,0 +1,6 @@
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/CMakeFiles/aasdk.dir
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/CMakeFiles/edit_cache.dir
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/CMakeFiles/rebuild_cache.dir
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/aasdk_proto/CMakeFiles/aasdk_proto.dir
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/aasdk_proto/CMakeFiles/edit_cache.dir
+/home/chrism/Projects/golf-cart-infotainment/src-tauri/aasdk-wrapper/build/aasdk_proto/CMakeFiles/rebuild_cache.dir

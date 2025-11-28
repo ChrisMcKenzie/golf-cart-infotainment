@@ -1,0 +1,13 @@
+# Android Auto / Android Open Accessory Protocol (AOAP) udev rules
+# This allows non-root users to access Android devices in AOAP mode
+
+# Google devices (Android phones) - AOAP mode
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="2d00", MODE="0664", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="2d01", MODE="0664", GROUP="plugdev"
+
+# Google devices (Android phones) - MTP/PTP mode (for switching to AOAP)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0664", GROUP="plugdev"
+
+# Generic USB device access (for enumeration)
+SUBSYSTEM=="usb", MODE="0664", GROUP="plugdev"
+

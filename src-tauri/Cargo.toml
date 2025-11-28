@@ -1,0 +1,41 @@
+[package]
+name = "golf-cart-infotainment"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "golf_cart_infotainment_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+cc = "1.0"
+bindgen = "0.69"
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Audio support
+rodio = "0.18"
+cpal = "0.15"
+
+# C bindings support
+libc = "0.2"
+
+# Raspberry Pi GPIO support (only on ARM targets)
+[target.'cfg(target_arch = "arm")'.dependencies]
+rppal = "0.14"
+
