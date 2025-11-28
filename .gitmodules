@@ -1,0 +1,3 @@
+[submodule "aasdk"]
+	path = aasdk
+	url = git@github.com:ChrisMcKenzie/aasdk.git
