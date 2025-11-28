@@ -14,72 +14,75 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace data {
-class DrivingStatusDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DrivingStatus> _instance;
-} _DrivingStatus_default_instance_;
+PROTOBUF_CONSTEXPR DrivingStatus::DrivingStatus(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.status_)*/0} {}
+struct DrivingStatusDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DrivingStatusDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DrivingStatusDefaultTypeInternal() {}
+  union {
+    DrivingStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DrivingStatusDefaultTypeInternal _DrivingStatus_default_instance_;
 }  // namespace data
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_DrivingStatus_DrivingStatusData_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_DrivingStatusData_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_DrivingStatusData_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_DrivingStatusData_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::data::_DrivingStatus_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::data::DrivingStatus();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::data::DrivingStatus::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DrivingStatus_DrivingStatusData_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DrivingStatus_DrivingStatusData_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_DrivingStatusData_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_DrivingStatusData_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_DrivingStatusData_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_DrivingStatusData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::DrivingStatus, _has_bits_),
+const uint32_t TableStruct_DrivingStatusData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::DrivingStatus, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::DrivingStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::DrivingStatus, status_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::DrivingStatus, _impl_.status_),
   0,
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 6, sizeof(::f1x::aasdk::proto::data::DrivingStatus)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 7, -1, sizeof(::f1x::aasdk::proto::data::DrivingStatus)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::data::_DrivingStatus_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::data::_DrivingStatus_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_DrivingStatusData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027DrivingStatusData.proto\022\024f1x.aasdk.pro"
   "to.data\"\037\n\rDrivingStatus\022\016\n\006status\030\001 \002(\005"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_DrivingStatusData_2eproto_deps[1] = {
+static ::_pbi::once_flag descriptor_table_DrivingStatusData_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_DrivingStatusData_2eproto = {
+    false, false, 80, descriptor_table_protodef_DrivingStatusData_2eproto,
+    "DrivingStatusData.proto",
+    &descriptor_table_DrivingStatusData_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_DrivingStatusData_2eproto::offsets,
+    file_level_metadata_DrivingStatusData_2eproto, file_level_enum_descriptors_DrivingStatusData_2eproto,
+    file_level_service_descriptors_DrivingStatusData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_DrivingStatusData_2eproto_sccs[1] = {
-  &scc_info_DrivingStatus_DrivingStatusData_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_DrivingStatusData_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_DrivingStatusData_2eproto = {
-  false, false, descriptor_table_protodef_DrivingStatusData_2eproto, "DrivingStatusData.proto", 80,
-  &descriptor_table_DrivingStatusData_2eproto_once, descriptor_table_DrivingStatusData_2eproto_sccs, descriptor_table_DrivingStatusData_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_DrivingStatusData_2eproto::offsets,
-  file_level_metadata_DrivingStatusData_2eproto, 1, file_level_enum_descriptors_DrivingStatusData_2eproto, file_level_service_descriptors_DrivingStatusData_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_DrivingStatusData_2eproto_getter() {
+  return &descriptor_table_DrivingStatusData_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_DrivingStatusData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_DrivingStatusData_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_DrivingStatusData_2eproto(&descriptor_table_DrivingStatusData_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -87,11 +90,9 @@ namespace data {
 
 // ===================================================================
 
-void DrivingStatus::InitAsDefaultInstance() {
-}
 class DrivingStatus::_Internal {
  public:
-  using HasBits = decltype(std::declval<DrivingStatus>()._has_bits_);
+  using HasBits = decltype(std::declval<DrivingStatus>()._impl_._has_bits_);
   static void set_has_status(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -100,115 +101,119 @@ class DrivingStatus::_Internal {
   }
 };
 
-DrivingStatus::DrivingStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+DrivingStatus::DrivingStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.data.DrivingStatus)
 }
 DrivingStatus::DrivingStatus(const DrivingStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _has_bits_(from._has_bits_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DrivingStatus* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.status_){}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  status_ = from.status_;
+  _this->_impl_.status_ = from._impl_.status_;
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.data.DrivingStatus)
 }
 
-void DrivingStatus::SharedCtor() {
-  status_ = 0;
+inline void DrivingStatus::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.status_){0}
+  };
 }
 
 DrivingStatus::~DrivingStatus() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.data.DrivingStatus)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void DrivingStatus::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void DrivingStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void DrivingStatus::ArenaDtor(void* object) {
-  DrivingStatus* _this = reinterpret_cast< DrivingStatus* >(object);
-  (void)_this;
-}
-void DrivingStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void DrivingStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const DrivingStatus& DrivingStatus::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DrivingStatus_DrivingStatusData_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DrivingStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.data.DrivingStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  status_ = 0;
-  _has_bits_.Clear();
+  _impl_.status_ = 0;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DrivingStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DrivingStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // required int32 status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_status(&has_bits);
-          status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
-  _has_bits_.Or(has_bits);
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DrivingStatus::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DrivingStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.data.DrivingStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required int32 status = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_status(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.data.DrivingStatus)
@@ -221,55 +226,34 @@ size_t DrivingStatus::ByteSizeLong() const {
 
   // required int32 status = 1;
   if (_internal_has_status()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_status());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_status());
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void DrivingStatus::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.data.DrivingStatus)
-  GOOGLE_DCHECK_NE(&from, this);
-  const DrivingStatus* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DrivingStatus>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.data.DrivingStatus)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.data.DrivingStatus)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DrivingStatus::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DrivingStatus::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DrivingStatus::GetClassData() const { return &_class_data_; }
 
-void DrivingStatus::MergeFrom(const DrivingStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.DrivingStatus)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void DrivingStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DrivingStatus*>(&to_msg);
+  auto& from = static_cast<const DrivingStatus&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.DrivingStatus)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
-    _internal_set_status(from._internal_status());
+    _this->_internal_set_status(from._internal_status());
   }
-}
-
-void DrivingStatus::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.data.DrivingStatus)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void DrivingStatus::CopyFrom(const DrivingStatus& from) {
@@ -280,21 +264,22 @@ void DrivingStatus::CopyFrom(const DrivingStatus& from) {
 }
 
 bool DrivingStatus::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
 void DrivingStatus::InternalSwap(DrivingStatus* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(status_, other->status_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.status_, other->_impl_.status_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DrivingStatus::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_DrivingStatusData_2eproto_getter, &descriptor_table_DrivingStatusData_2eproto_once,
+      file_level_metadata_DrivingStatusData_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace data
@@ -302,7 +287,8 @@ void DrivingStatus::InternalSwap(DrivingStatus* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::DrivingStatus* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::DrivingStatus >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::DrivingStatus*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::DrivingStatus >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::data::DrivingStatus >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

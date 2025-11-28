@@ -14,106 +14,88 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_AccelData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Accel_AccelData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_CompassData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Compass_CompassData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_DiagnosticsData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Diagnostics_DiagnosticsData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_DoorData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Door_DoorData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_DrivingStatusData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DrivingStatus_DrivingStatusData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_EnvironmentData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Environment_EnvironmentData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_FuelLevelData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FuelLevel_FuelLevelData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_GPSLocationData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GPSLocation_GPSLocationData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_GearData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Gear_GearData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_GyroData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Gyro_GyroData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_HVACData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HVAC_HVACData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_LightData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Light_LightData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_NightModeData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NightMode_NightModeData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_OdometerData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Odometer_OdometerData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ParkingBrakeData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ParkingBrake_ParkingBrakeData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_PassengerData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Passenger_PassengerData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_RPMData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RPM_RPMData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_SpeedData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Speed_SpeedData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_SteeringWheelData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SteeringWheel_SteeringWheelData_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace messages {
-class SensorEventIndicationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SensorEventIndication> _instance;
-} _SensorEventIndication_default_instance_;
+PROTOBUF_CONSTEXPR SensorEventIndication::SensorEventIndication(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.gps_location_)*/{}
+  , /*decltype(_impl_.compass_)*/{}
+  , /*decltype(_impl_.speed_)*/{}
+  , /*decltype(_impl_.rpm_)*/{}
+  , /*decltype(_impl_.odometer_)*/{}
+  , /*decltype(_impl_.fuel_level_)*/{}
+  , /*decltype(_impl_.parking_brake_)*/{}
+  , /*decltype(_impl_.gear_)*/{}
+  , /*decltype(_impl_.diagnostics_)*/{}
+  , /*decltype(_impl_.night_mode_)*/{}
+  , /*decltype(_impl_.enviorment_)*/{}
+  , /*decltype(_impl_.hvac_)*/{}
+  , /*decltype(_impl_.driving_status_)*/{}
+  , /*decltype(_impl_.steering_wheel_)*/{}
+  , /*decltype(_impl_.passenger_)*/{}
+  , /*decltype(_impl_.door_)*/{}
+  , /*decltype(_impl_.light_)*/{}
+  , /*decltype(_impl_.accel_)*/{}
+  , /*decltype(_impl_.gyro_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SensorEventIndicationDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SensorEventIndicationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SensorEventIndicationDefaultTypeInternal() {}
+  union {
+    SensorEventIndication _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SensorEventIndicationDefaultTypeInternal _SensorEventIndication_default_instance_;
 }  // namespace messages
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_SensorEventIndicationMessage_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_SensorEventIndicationMessage_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_SensorEventIndicationMessage_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::messages::_SensorEventIndication_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::messages::SensorEventIndication();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::messages::SensorEventIndication::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<19> scc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 19, 0, InitDefaultsscc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto}, {
-      &scc_info_GPSLocation_GPSLocationData_2eproto.base,
-      &scc_info_Compass_CompassData_2eproto.base,
-      &scc_info_Speed_SpeedData_2eproto.base,
-      &scc_info_RPM_RPMData_2eproto.base,
-      &scc_info_Odometer_OdometerData_2eproto.base,
-      &scc_info_FuelLevel_FuelLevelData_2eproto.base,
-      &scc_info_ParkingBrake_ParkingBrakeData_2eproto.base,
-      &scc_info_Gear_GearData_2eproto.base,
-      &scc_info_Diagnostics_DiagnosticsData_2eproto.base,
-      &scc_info_NightMode_NightModeData_2eproto.base,
-      &scc_info_Environment_EnvironmentData_2eproto.base,
-      &scc_info_HVAC_HVACData_2eproto.base,
-      &scc_info_DrivingStatus_DrivingStatusData_2eproto.base,
-      &scc_info_SteeringWheel_SteeringWheelData_2eproto.base,
-      &scc_info_Passenger_PassengerData_2eproto.base,
-      &scc_info_Door_DoorData_2eproto.base,
-      &scc_info_Light_LightData_2eproto.base,
-      &scc_info_Accel_AccelData_2eproto.base,
-      &scc_info_Gyro_GyroData_2eproto.base,}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_SensorEventIndicationMessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_SensorEventIndicationMessage_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_SensorEventIndicationMessage_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_SensorEventIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_SensorEventIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, gps_location_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, compass_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, speed_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, rpm_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, odometer_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, fuel_level_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, parking_brake_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, gear_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, diagnostics_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, night_mode_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, enviorment_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, hvac_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, driving_status_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, steering_wheel_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, passenger_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, door_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, light_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, accel_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, gyro_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.gps_location_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.compass_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.speed_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.rpm_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.odometer_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.fuel_level_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.parking_brake_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.gear_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.diagnostics_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.night_mode_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.enviorment_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.hvac_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.driving_status_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.steering_wheel_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.passenger_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.door_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.light_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.accel_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorEventIndication, _impl_.gyro_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::messages::SensorEventIndication)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::messages::SensorEventIndication)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::messages::_SensorEventIndication_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::messages::_SensorEventIndication_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_SensorEventIndicationMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -154,7 +136,7 @@ const char descriptor_table_protodef_SensorEventIndicationMessage_2eproto[] PROT
   ".Accel\022(\n\004gyro\030\024 \003(\0132\032.f1x.aasdk.proto.d"
   "ata.Gyrob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_SensorEventIndicationMessage_2eproto_deps[19] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_SensorEventIndicationMessage_2eproto_deps[19] = {
   &::descriptor_table_AccelData_2eproto,
   &::descriptor_table_CompassData_2eproto,
   &::descriptor_table_DiagnosticsData_2eproto,
@@ -175,19 +157,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_SpeedData_2eproto,
   &::descriptor_table_SteeringWheelData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_SensorEventIndicationMessage_2eproto_sccs[1] = {
-  &scc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto.base,
+static ::_pbi::once_flag descriptor_table_SensorEventIndicationMessage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_SensorEventIndicationMessage_2eproto = {
+    false, false, 1416, descriptor_table_protodef_SensorEventIndicationMessage_2eproto,
+    "SensorEventIndicationMessage.proto",
+    &descriptor_table_SensorEventIndicationMessage_2eproto_once, descriptor_table_SensorEventIndicationMessage_2eproto_deps, 19, 1,
+    schemas, file_default_instances, TableStruct_SensorEventIndicationMessage_2eproto::offsets,
+    file_level_metadata_SensorEventIndicationMessage_2eproto, file_level_enum_descriptors_SensorEventIndicationMessage_2eproto,
+    file_level_service_descriptors_SensorEventIndicationMessage_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_SensorEventIndicationMessage_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_SensorEventIndicationMessage_2eproto = {
-  false, false, descriptor_table_protodef_SensorEventIndicationMessage_2eproto, "SensorEventIndicationMessage.proto", 1416,
-  &descriptor_table_SensorEventIndicationMessage_2eproto_once, descriptor_table_SensorEventIndicationMessage_2eproto_sccs, descriptor_table_SensorEventIndicationMessage_2eproto_deps, 1, 19,
-  schemas, file_default_instances, TableStruct_SensorEventIndicationMessage_2eproto::offsets,
-  file_level_metadata_SensorEventIndicationMessage_2eproto, 1, file_level_enum_descriptors_SensorEventIndicationMessage_2eproto, file_level_service_descriptors_SensorEventIndicationMessage_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_SensorEventIndicationMessage_2eproto_getter() {
+  return &descriptor_table_SensorEventIndicationMessage_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_SensorEventIndicationMessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_SensorEventIndicationMessage_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_SensorEventIndicationMessage_2eproto(&descriptor_table_SensorEventIndicationMessage_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -195,187 +179,203 @@ namespace messages {
 
 // ===================================================================
 
-void SensorEventIndication::InitAsDefaultInstance() {
-}
 class SensorEventIndication::_Internal {
  public:
 };
 
 void SensorEventIndication::clear_gps_location() {
-  gps_location_.Clear();
+  _impl_.gps_location_.Clear();
 }
 void SensorEventIndication::clear_compass() {
-  compass_.Clear();
+  _impl_.compass_.Clear();
 }
 void SensorEventIndication::clear_speed() {
-  speed_.Clear();
+  _impl_.speed_.Clear();
 }
 void SensorEventIndication::clear_rpm() {
-  rpm_.Clear();
+  _impl_.rpm_.Clear();
 }
 void SensorEventIndication::clear_odometer() {
-  odometer_.Clear();
+  _impl_.odometer_.Clear();
 }
 void SensorEventIndication::clear_fuel_level() {
-  fuel_level_.Clear();
+  _impl_.fuel_level_.Clear();
 }
 void SensorEventIndication::clear_parking_brake() {
-  parking_brake_.Clear();
+  _impl_.parking_brake_.Clear();
 }
 void SensorEventIndication::clear_gear() {
-  gear_.Clear();
+  _impl_.gear_.Clear();
 }
 void SensorEventIndication::clear_diagnostics() {
-  diagnostics_.Clear();
+  _impl_.diagnostics_.Clear();
 }
 void SensorEventIndication::clear_night_mode() {
-  night_mode_.Clear();
+  _impl_.night_mode_.Clear();
 }
 void SensorEventIndication::clear_enviorment() {
-  enviorment_.Clear();
+  _impl_.enviorment_.Clear();
 }
 void SensorEventIndication::clear_hvac() {
-  hvac_.Clear();
+  _impl_.hvac_.Clear();
 }
 void SensorEventIndication::clear_driving_status() {
-  driving_status_.Clear();
+  _impl_.driving_status_.Clear();
 }
 void SensorEventIndication::clear_steering_wheel() {
-  steering_wheel_.Clear();
+  _impl_.steering_wheel_.Clear();
 }
 void SensorEventIndication::clear_passenger() {
-  passenger_.Clear();
+  _impl_.passenger_.Clear();
 }
 void SensorEventIndication::clear_door() {
-  door_.Clear();
+  _impl_.door_.Clear();
 }
 void SensorEventIndication::clear_light() {
-  light_.Clear();
+  _impl_.light_.Clear();
 }
 void SensorEventIndication::clear_accel() {
-  accel_.Clear();
+  _impl_.accel_.Clear();
 }
 void SensorEventIndication::clear_gyro() {
-  gyro_.Clear();
+  _impl_.gyro_.Clear();
 }
-SensorEventIndication::SensorEventIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  gps_location_(arena),
-  compass_(arena),
-  speed_(arena),
-  rpm_(arena),
-  odometer_(arena),
-  fuel_level_(arena),
-  parking_brake_(arena),
-  gear_(arena),
-  diagnostics_(arena),
-  night_mode_(arena),
-  enviorment_(arena),
-  hvac_(arena),
-  driving_status_(arena),
-  steering_wheel_(arena),
-  passenger_(arena),
-  door_(arena),
-  light_(arena),
-  accel_(arena),
-  gyro_(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+SensorEventIndication::SensorEventIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.messages.SensorEventIndication)
 }
 SensorEventIndication::SensorEventIndication(const SensorEventIndication& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      gps_location_(from.gps_location_),
-      compass_(from.compass_),
-      speed_(from.speed_),
-      rpm_(from.rpm_),
-      odometer_(from.odometer_),
-      fuel_level_(from.fuel_level_),
-      parking_brake_(from.parking_brake_),
-      gear_(from.gear_),
-      diagnostics_(from.diagnostics_),
-      night_mode_(from.night_mode_),
-      enviorment_(from.enviorment_),
-      hvac_(from.hvac_),
-      driving_status_(from.driving_status_),
-      steering_wheel_(from.steering_wheel_),
-      passenger_(from.passenger_),
-      door_(from.door_),
-      light_(from.light_),
-      accel_(from.accel_),
-      gyro_(from.gyro_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SensorEventIndication* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.gps_location_){from._impl_.gps_location_}
+    , decltype(_impl_.compass_){from._impl_.compass_}
+    , decltype(_impl_.speed_){from._impl_.speed_}
+    , decltype(_impl_.rpm_){from._impl_.rpm_}
+    , decltype(_impl_.odometer_){from._impl_.odometer_}
+    , decltype(_impl_.fuel_level_){from._impl_.fuel_level_}
+    , decltype(_impl_.parking_brake_){from._impl_.parking_brake_}
+    , decltype(_impl_.gear_){from._impl_.gear_}
+    , decltype(_impl_.diagnostics_){from._impl_.diagnostics_}
+    , decltype(_impl_.night_mode_){from._impl_.night_mode_}
+    , decltype(_impl_.enviorment_){from._impl_.enviorment_}
+    , decltype(_impl_.hvac_){from._impl_.hvac_}
+    , decltype(_impl_.driving_status_){from._impl_.driving_status_}
+    , decltype(_impl_.steering_wheel_){from._impl_.steering_wheel_}
+    , decltype(_impl_.passenger_){from._impl_.passenger_}
+    , decltype(_impl_.door_){from._impl_.door_}
+    , decltype(_impl_.light_){from._impl_.light_}
+    , decltype(_impl_.accel_){from._impl_.accel_}
+    , decltype(_impl_.gyro_){from._impl_.gyro_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.messages.SensorEventIndication)
 }
 
-void SensorEventIndication::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto.base);
+inline void SensorEventIndication::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.gps_location_){arena}
+    , decltype(_impl_.compass_){arena}
+    , decltype(_impl_.speed_){arena}
+    , decltype(_impl_.rpm_){arena}
+    , decltype(_impl_.odometer_){arena}
+    , decltype(_impl_.fuel_level_){arena}
+    , decltype(_impl_.parking_brake_){arena}
+    , decltype(_impl_.gear_){arena}
+    , decltype(_impl_.diagnostics_){arena}
+    , decltype(_impl_.night_mode_){arena}
+    , decltype(_impl_.enviorment_){arena}
+    , decltype(_impl_.hvac_){arena}
+    , decltype(_impl_.driving_status_){arena}
+    , decltype(_impl_.steering_wheel_){arena}
+    , decltype(_impl_.passenger_){arena}
+    , decltype(_impl_.door_){arena}
+    , decltype(_impl_.light_){arena}
+    , decltype(_impl_.accel_){arena}
+    , decltype(_impl_.gyro_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 SensorEventIndication::~SensorEventIndication() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.messages.SensorEventIndication)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void SensorEventIndication::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void SensorEventIndication::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.gps_location_.~RepeatedPtrField();
+  _impl_.compass_.~RepeatedPtrField();
+  _impl_.speed_.~RepeatedPtrField();
+  _impl_.rpm_.~RepeatedPtrField();
+  _impl_.odometer_.~RepeatedPtrField();
+  _impl_.fuel_level_.~RepeatedPtrField();
+  _impl_.parking_brake_.~RepeatedPtrField();
+  _impl_.gear_.~RepeatedPtrField();
+  _impl_.diagnostics_.~RepeatedPtrField();
+  _impl_.night_mode_.~RepeatedPtrField();
+  _impl_.enviorment_.~RepeatedPtrField();
+  _impl_.hvac_.~RepeatedPtrField();
+  _impl_.driving_status_.~RepeatedPtrField();
+  _impl_.steering_wheel_.~RepeatedPtrField();
+  _impl_.passenger_.~RepeatedPtrField();
+  _impl_.door_.~RepeatedPtrField();
+  _impl_.light_.~RepeatedPtrField();
+  _impl_.accel_.~RepeatedPtrField();
+  _impl_.gyro_.~RepeatedPtrField();
 }
 
-void SensorEventIndication::ArenaDtor(void* object) {
-  SensorEventIndication* _this = reinterpret_cast< SensorEventIndication* >(object);
-  (void)_this;
-}
-void SensorEventIndication::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void SensorEventIndication::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const SensorEventIndication& SensorEventIndication::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SensorEventIndication_SensorEventIndicationMessage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SensorEventIndication::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.messages.SensorEventIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  gps_location_.Clear();
-  compass_.Clear();
-  speed_.Clear();
-  rpm_.Clear();
-  odometer_.Clear();
-  fuel_level_.Clear();
-  parking_brake_.Clear();
-  gear_.Clear();
-  diagnostics_.Clear();
-  night_mode_.Clear();
-  enviorment_.Clear();
-  hvac_.Clear();
-  driving_status_.Clear();
-  steering_wheel_.Clear();
-  passenger_.Clear();
-  door_.Clear();
-  light_.Clear();
-  accel_.Clear();
-  gyro_.Clear();
+  _impl_.gps_location_.Clear();
+  _impl_.compass_.Clear();
+  _impl_.speed_.Clear();
+  _impl_.rpm_.Clear();
+  _impl_.odometer_.Clear();
+  _impl_.fuel_level_.Clear();
+  _impl_.parking_brake_.Clear();
+  _impl_.gear_.Clear();
+  _impl_.diagnostics_.Clear();
+  _impl_.night_mode_.Clear();
+  _impl_.enviorment_.Clear();
+  _impl_.hvac_.Clear();
+  _impl_.driving_status_.Clear();
+  _impl_.steering_wheel_.Clear();
+  _impl_.passenger_.Clear();
+  _impl_.door_.Clear();
+  _impl_.light_.Clear();
+  _impl_.accel_.Clear();
+  _impl_.gyro_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* SensorEventIndication::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // repeated .f1x.aasdk.proto.data.GPSLocation gps_location = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -383,11 +383,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Compass compass = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -395,11 +396,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Speed speed = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -407,11 +409,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.RPM rpm = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -419,11 +422,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Odometer odometer = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -431,11 +435,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.FuelLevel fuel_level = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -443,11 +448,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.ParkingBrake parking_brake = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -455,11 +461,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Gear gear = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -467,11 +474,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Diagnostics diagnostics = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -479,11 +487,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.NightMode night_mode = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -491,11 +500,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Environment enviorment = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -503,11 +513,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.HVAC hvac = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -515,11 +526,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.DrivingStatus driving_status = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -527,11 +539,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.SteeringWheel steering_wheel = 14;
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -539,11 +552,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Passenger passenger = 15;
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -551,11 +565,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Door door = 16;
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -563,11 +578,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Light light = 17;
       case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -575,11 +591,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Accel accel = 19;
       case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -587,11 +604,12 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<154>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .f1x.aasdk.proto.data.Gyro gyro = 20;
       case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -599,190 +617,192 @@ const char* SensorEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SensorEventIndication::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SensorEventIndication::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.messages.SensorEventIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .f1x.aasdk.proto.data.GPSLocation gps_location = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_gps_location_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_gps_location_size()); i < n; i++) {
+    const auto& repfield = this->_internal_gps_location(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_gps_location(i), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Compass compass = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_compass_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_compass_size()); i < n; i++) {
+    const auto& repfield = this->_internal_compass(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_compass(i), target, stream);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Speed speed = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_speed_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_speed_size()); i < n; i++) {
+    const auto& repfield = this->_internal_speed(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_speed(i), target, stream);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.RPM rpm = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_rpm_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_rpm_size()); i < n; i++) {
+    const auto& repfield = this->_internal_rpm(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_rpm(i), target, stream);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Odometer odometer = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_odometer_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_odometer_size()); i < n; i++) {
+    const auto& repfield = this->_internal_odometer(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, this->_internal_odometer(i), target, stream);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.FuelLevel fuel_level = 6;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_fuel_level_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_fuel_level_size()); i < n; i++) {
+    const auto& repfield = this->_internal_fuel_level(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, this->_internal_fuel_level(i), target, stream);
+        InternalWriteMessage(6, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.ParkingBrake parking_brake = 7;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_parking_brake_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_parking_brake_size()); i < n; i++) {
+    const auto& repfield = this->_internal_parking_brake(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, this->_internal_parking_brake(i), target, stream);
+        InternalWriteMessage(7, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Gear gear = 8;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_gear_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_gear_size()); i < n; i++) {
+    const auto& repfield = this->_internal_gear(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, this->_internal_gear(i), target, stream);
+        InternalWriteMessage(8, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Diagnostics diagnostics = 9;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_diagnostics_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_diagnostics_size()); i < n; i++) {
+    const auto& repfield = this->_internal_diagnostics(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, this->_internal_diagnostics(i), target, stream);
+        InternalWriteMessage(9, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.NightMode night_mode = 10;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_night_mode_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_night_mode_size()); i < n; i++) {
+    const auto& repfield = this->_internal_night_mode(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(10, this->_internal_night_mode(i), target, stream);
+        InternalWriteMessage(10, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Environment enviorment = 11;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_enviorment_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_enviorment_size()); i < n; i++) {
+    const auto& repfield = this->_internal_enviorment(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(11, this->_internal_enviorment(i), target, stream);
+        InternalWriteMessage(11, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.HVAC hvac = 12;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_hvac_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_hvac_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hvac(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(12, this->_internal_hvac(i), target, stream);
+        InternalWriteMessage(12, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.DrivingStatus driving_status = 13;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_driving_status_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_driving_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_driving_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_driving_status(i), target, stream);
+        InternalWriteMessage(13, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.SteeringWheel steering_wheel = 14;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_steering_wheel_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_steering_wheel_size()); i < n; i++) {
+    const auto& repfield = this->_internal_steering_wheel(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(14, this->_internal_steering_wheel(i), target, stream);
+        InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Passenger passenger = 15;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_passenger_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_passenger_size()); i < n; i++) {
+    const auto& repfield = this->_internal_passenger(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(15, this->_internal_passenger(i), target, stream);
+        InternalWriteMessage(15, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Door door = 16;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_door_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_door_size()); i < n; i++) {
+    const auto& repfield = this->_internal_door(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(16, this->_internal_door(i), target, stream);
+        InternalWriteMessage(16, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Light light = 17;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_light_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_light_size()); i < n; i++) {
+    const auto& repfield = this->_internal_light(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(17, this->_internal_light(i), target, stream);
+        InternalWriteMessage(17, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Accel accel = 19;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_accel_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_accel_size()); i < n; i++) {
+    const auto& repfield = this->_internal_accel(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(19, this->_internal_accel(i), target, stream);
+        InternalWriteMessage(19, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .f1x.aasdk.proto.data.Gyro gyro = 20;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_gyro_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_gyro_size()); i < n; i++) {
+    const auto& repfield = this->_internal_gyro(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(20, this->_internal_gyro(i), target, stream);
+        InternalWriteMessage(20, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.messages.SensorEventIndication)
@@ -793,200 +813,181 @@ size_t SensorEventIndication::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.messages.SensorEventIndication)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .f1x.aasdk.proto.data.GPSLocation gps_location = 1;
   total_size += 1UL * this->_internal_gps_location_size();
-  for (const auto& msg : this->gps_location_) {
+  for (const auto& msg : this->_impl_.gps_location_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Compass compass = 2;
   total_size += 1UL * this->_internal_compass_size();
-  for (const auto& msg : this->compass_) {
+  for (const auto& msg : this->_impl_.compass_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Speed speed = 3;
   total_size += 1UL * this->_internal_speed_size();
-  for (const auto& msg : this->speed_) {
+  for (const auto& msg : this->_impl_.speed_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.RPM rpm = 4;
   total_size += 1UL * this->_internal_rpm_size();
-  for (const auto& msg : this->rpm_) {
+  for (const auto& msg : this->_impl_.rpm_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Odometer odometer = 5;
   total_size += 1UL * this->_internal_odometer_size();
-  for (const auto& msg : this->odometer_) {
+  for (const auto& msg : this->_impl_.odometer_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.FuelLevel fuel_level = 6;
   total_size += 1UL * this->_internal_fuel_level_size();
-  for (const auto& msg : this->fuel_level_) {
+  for (const auto& msg : this->_impl_.fuel_level_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.ParkingBrake parking_brake = 7;
   total_size += 1UL * this->_internal_parking_brake_size();
-  for (const auto& msg : this->parking_brake_) {
+  for (const auto& msg : this->_impl_.parking_brake_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Gear gear = 8;
   total_size += 1UL * this->_internal_gear_size();
-  for (const auto& msg : this->gear_) {
+  for (const auto& msg : this->_impl_.gear_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Diagnostics diagnostics = 9;
   total_size += 1UL * this->_internal_diagnostics_size();
-  for (const auto& msg : this->diagnostics_) {
+  for (const auto& msg : this->_impl_.diagnostics_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.NightMode night_mode = 10;
   total_size += 1UL * this->_internal_night_mode_size();
-  for (const auto& msg : this->night_mode_) {
+  for (const auto& msg : this->_impl_.night_mode_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Environment enviorment = 11;
   total_size += 1UL * this->_internal_enviorment_size();
-  for (const auto& msg : this->enviorment_) {
+  for (const auto& msg : this->_impl_.enviorment_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.HVAC hvac = 12;
   total_size += 1UL * this->_internal_hvac_size();
-  for (const auto& msg : this->hvac_) {
+  for (const auto& msg : this->_impl_.hvac_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.DrivingStatus driving_status = 13;
   total_size += 1UL * this->_internal_driving_status_size();
-  for (const auto& msg : this->driving_status_) {
+  for (const auto& msg : this->_impl_.driving_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.SteeringWheel steering_wheel = 14;
   total_size += 1UL * this->_internal_steering_wheel_size();
-  for (const auto& msg : this->steering_wheel_) {
+  for (const auto& msg : this->_impl_.steering_wheel_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Passenger passenger = 15;
   total_size += 1UL * this->_internal_passenger_size();
-  for (const auto& msg : this->passenger_) {
+  for (const auto& msg : this->_impl_.passenger_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Door door = 16;
   total_size += 2UL * this->_internal_door_size();
-  for (const auto& msg : this->door_) {
+  for (const auto& msg : this->_impl_.door_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Light light = 17;
   total_size += 2UL * this->_internal_light_size();
-  for (const auto& msg : this->light_) {
+  for (const auto& msg : this->_impl_.light_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Accel accel = 19;
   total_size += 2UL * this->_internal_accel_size();
-  for (const auto& msg : this->accel_) {
+  for (const auto& msg : this->_impl_.accel_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .f1x.aasdk.proto.data.Gyro gyro = 20;
   total_size += 2UL * this->_internal_gyro_size();
-  for (const auto& msg : this->gyro_) {
+  for (const auto& msg : this->_impl_.gyro_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SensorEventIndication::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.messages.SensorEventIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SensorEventIndication* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SensorEventIndication>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.messages.SensorEventIndication)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.messages.SensorEventIndication)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SensorEventIndication::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SensorEventIndication::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SensorEventIndication::GetClassData() const { return &_class_data_; }
 
-void SensorEventIndication::MergeFrom(const SensorEventIndication& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.SensorEventIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void SensorEventIndication::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SensorEventIndication*>(&to_msg);
+  auto& from = static_cast<const SensorEventIndication&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.SensorEventIndication)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  gps_location_.MergeFrom(from.gps_location_);
-  compass_.MergeFrom(from.compass_);
-  speed_.MergeFrom(from.speed_);
-  rpm_.MergeFrom(from.rpm_);
-  odometer_.MergeFrom(from.odometer_);
-  fuel_level_.MergeFrom(from.fuel_level_);
-  parking_brake_.MergeFrom(from.parking_brake_);
-  gear_.MergeFrom(from.gear_);
-  diagnostics_.MergeFrom(from.diagnostics_);
-  night_mode_.MergeFrom(from.night_mode_);
-  enviorment_.MergeFrom(from.enviorment_);
-  hvac_.MergeFrom(from.hvac_);
-  driving_status_.MergeFrom(from.driving_status_);
-  steering_wheel_.MergeFrom(from.steering_wheel_);
-  passenger_.MergeFrom(from.passenger_);
-  door_.MergeFrom(from.door_);
-  light_.MergeFrom(from.light_);
-  accel_.MergeFrom(from.accel_);
-  gyro_.MergeFrom(from.gyro_);
-}
-
-void SensorEventIndication::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.messages.SensorEventIndication)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_impl_.gps_location_.MergeFrom(from._impl_.gps_location_);
+  _this->_impl_.compass_.MergeFrom(from._impl_.compass_);
+  _this->_impl_.speed_.MergeFrom(from._impl_.speed_);
+  _this->_impl_.rpm_.MergeFrom(from._impl_.rpm_);
+  _this->_impl_.odometer_.MergeFrom(from._impl_.odometer_);
+  _this->_impl_.fuel_level_.MergeFrom(from._impl_.fuel_level_);
+  _this->_impl_.parking_brake_.MergeFrom(from._impl_.parking_brake_);
+  _this->_impl_.gear_.MergeFrom(from._impl_.gear_);
+  _this->_impl_.diagnostics_.MergeFrom(from._impl_.diagnostics_);
+  _this->_impl_.night_mode_.MergeFrom(from._impl_.night_mode_);
+  _this->_impl_.enviorment_.MergeFrom(from._impl_.enviorment_);
+  _this->_impl_.hvac_.MergeFrom(from._impl_.hvac_);
+  _this->_impl_.driving_status_.MergeFrom(from._impl_.driving_status_);
+  _this->_impl_.steering_wheel_.MergeFrom(from._impl_.steering_wheel_);
+  _this->_impl_.passenger_.MergeFrom(from._impl_.passenger_);
+  _this->_impl_.door_.MergeFrom(from._impl_.door_);
+  _this->_impl_.light_.MergeFrom(from._impl_.light_);
+  _this->_impl_.accel_.MergeFrom(from._impl_.accel_);
+  _this->_impl_.gyro_.MergeFrom(from._impl_.gyro_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SensorEventIndication::CopyFrom(const SensorEventIndication& from) {
@@ -997,39 +998,42 @@ void SensorEventIndication::CopyFrom(const SensorEventIndication& from) {
 }
 
 bool SensorEventIndication::IsInitialized() const {
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(night_mode_)) return false;
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(driving_status_)) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.night_mode_))
+    return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.driving_status_))
+    return false;
   return true;
 }
 
 void SensorEventIndication::InternalSwap(SensorEventIndication* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  gps_location_.InternalSwap(&other->gps_location_);
-  compass_.InternalSwap(&other->compass_);
-  speed_.InternalSwap(&other->speed_);
-  rpm_.InternalSwap(&other->rpm_);
-  odometer_.InternalSwap(&other->odometer_);
-  fuel_level_.InternalSwap(&other->fuel_level_);
-  parking_brake_.InternalSwap(&other->parking_brake_);
-  gear_.InternalSwap(&other->gear_);
-  diagnostics_.InternalSwap(&other->diagnostics_);
-  night_mode_.InternalSwap(&other->night_mode_);
-  enviorment_.InternalSwap(&other->enviorment_);
-  hvac_.InternalSwap(&other->hvac_);
-  driving_status_.InternalSwap(&other->driving_status_);
-  steering_wheel_.InternalSwap(&other->steering_wheel_);
-  passenger_.InternalSwap(&other->passenger_);
-  door_.InternalSwap(&other->door_);
-  light_.InternalSwap(&other->light_);
-  accel_.InternalSwap(&other->accel_);
-  gyro_.InternalSwap(&other->gyro_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.gps_location_.InternalSwap(&other->_impl_.gps_location_);
+  _impl_.compass_.InternalSwap(&other->_impl_.compass_);
+  _impl_.speed_.InternalSwap(&other->_impl_.speed_);
+  _impl_.rpm_.InternalSwap(&other->_impl_.rpm_);
+  _impl_.odometer_.InternalSwap(&other->_impl_.odometer_);
+  _impl_.fuel_level_.InternalSwap(&other->_impl_.fuel_level_);
+  _impl_.parking_brake_.InternalSwap(&other->_impl_.parking_brake_);
+  _impl_.gear_.InternalSwap(&other->_impl_.gear_);
+  _impl_.diagnostics_.InternalSwap(&other->_impl_.diagnostics_);
+  _impl_.night_mode_.InternalSwap(&other->_impl_.night_mode_);
+  _impl_.enviorment_.InternalSwap(&other->_impl_.enviorment_);
+  _impl_.hvac_.InternalSwap(&other->_impl_.hvac_);
+  _impl_.driving_status_.InternalSwap(&other->_impl_.driving_status_);
+  _impl_.steering_wheel_.InternalSwap(&other->_impl_.steering_wheel_);
+  _impl_.passenger_.InternalSwap(&other->_impl_.passenger_);
+  _impl_.door_.InternalSwap(&other->_impl_.door_);
+  _impl_.light_.InternalSwap(&other->_impl_.light_);
+  _impl_.accel_.InternalSwap(&other->_impl_.accel_);
+  _impl_.gyro_.InternalSwap(&other->_impl_.gyro_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SensorEventIndication::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_SensorEventIndicationMessage_2eproto_getter, &descriptor_table_SensorEventIndicationMessage_2eproto_once,
+      file_level_metadata_SensorEventIndicationMessage_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messages
@@ -1037,7 +1041,8 @@ void SensorEventIndication::InternalSwap(SensorEventIndication* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::SensorEventIndication* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::SensorEventIndication >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::SensorEventIndication*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::SensorEventIndication >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::messages::SensorEventIndication >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

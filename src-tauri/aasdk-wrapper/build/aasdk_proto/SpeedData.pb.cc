@@ -14,52 +14,56 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace data {
-class SpeedDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Speed> _instance;
-} _Speed_default_instance_;
+PROTOBUF_CONSTEXPR Speed::Speed(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.speed_)*/0
+  , /*decltype(_impl_.cruise_engaged_)*/false
+  , /*decltype(_impl_.cruise_set_speed_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SpeedDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SpeedDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SpeedDefaultTypeInternal() {}
+  union {
+    Speed _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SpeedDefaultTypeInternal _Speed_default_instance_;
 }  // namespace data
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_Speed_SpeedData_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_SpeedData_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_SpeedData_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_SpeedData_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::data::_Speed_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::data::Speed();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::data::Speed::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Speed_SpeedData_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Speed_SpeedData_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_SpeedData_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_SpeedData_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_SpeedData_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_SpeedData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_SpeedData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, speed_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, cruise_engaged_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, cruise_set_speed_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, _impl_.speed_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, _impl_.cruise_engaged_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Speed, _impl_.cruise_set_speed_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::data::Speed)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::data::Speed)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::data::_Speed_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::data::_Speed_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_SpeedData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -68,21 +72,21 @@ const char descriptor_table_protodef_SpeedData_2eproto[] PROTOBUF_SECTION_VARIAB
   "d\030\002 \001(\010\022\030\n\020cruise_set_speed\030\003 \001(\010b\006proto"
   "3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_SpeedData_2eproto_deps[1] = {
+static ::_pbi::once_flag descriptor_table_SpeedData_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_SpeedData_2eproto = {
+    false, false, 121, descriptor_table_protodef_SpeedData_2eproto,
+    "SpeedData.proto",
+    &descriptor_table_SpeedData_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_SpeedData_2eproto::offsets,
+    file_level_metadata_SpeedData_2eproto, file_level_enum_descriptors_SpeedData_2eproto,
+    file_level_service_descriptors_SpeedData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_SpeedData_2eproto_sccs[1] = {
-  &scc_info_Speed_SpeedData_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_SpeedData_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_SpeedData_2eproto = {
-  false, false, descriptor_table_protodef_SpeedData_2eproto, "SpeedData.proto", 121,
-  &descriptor_table_SpeedData_2eproto_once, descriptor_table_SpeedData_2eproto_sccs, descriptor_table_SpeedData_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_SpeedData_2eproto::offsets,
-  file_level_metadata_SpeedData_2eproto, 1, file_level_enum_descriptors_SpeedData_2eproto, file_level_service_descriptors_SpeedData_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_SpeedData_2eproto_getter() {
+  return &descriptor_table_SpeedData_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_SpeedData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_SpeedData_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_SpeedData_2eproto(&descriptor_table_SpeedData_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -90,147 +94,152 @@ namespace data {
 
 // ===================================================================
 
-void Speed::InitAsDefaultInstance() {
-}
 class Speed::_Internal {
  public:
 };
 
-Speed::Speed(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+Speed::Speed(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.data.Speed)
 }
 Speed::Speed(const Speed& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Speed* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.speed_){}
+    , decltype(_impl_.cruise_engaged_){}
+    , decltype(_impl_.cruise_set_speed_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&speed_, &from.speed_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cruise_set_speed_) -
-    reinterpret_cast<char*>(&speed_)) + sizeof(cruise_set_speed_));
+  ::memcpy(&_impl_.speed_, &from._impl_.speed_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.cruise_set_speed_) -
+    reinterpret_cast<char*>(&_impl_.speed_)) + sizeof(_impl_.cruise_set_speed_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.data.Speed)
 }
 
-void Speed::SharedCtor() {
-  ::memset(&speed_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cruise_set_speed_) -
-      reinterpret_cast<char*>(&speed_)) + sizeof(cruise_set_speed_));
+inline void Speed::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.speed_){0}
+    , decltype(_impl_.cruise_engaged_){false}
+    , decltype(_impl_.cruise_set_speed_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Speed::~Speed() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.data.Speed)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Speed::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void Speed::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void Speed::ArenaDtor(void* object) {
-  Speed* _this = reinterpret_cast< Speed* >(object);
-  (void)_this;
-}
-void Speed::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Speed::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const Speed& Speed::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Speed_SpeedData_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Speed::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.data.Speed)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&speed_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cruise_set_speed_) -
-      reinterpret_cast<char*>(&speed_)) + sizeof(cruise_set_speed_));
+  ::memset(&_impl_.speed_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.cruise_set_speed_) -
+      reinterpret_cast<char*>(&_impl_.speed_)) + sizeof(_impl_.cruise_set_speed_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Speed::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Speed::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 speed = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool cruise_engaged = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          cruise_engaged_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.cruise_engaged_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool cruise_set_speed = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          cruise_set_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.cruise_set_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Speed::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Speed::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.data.Speed)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 speed = 1;
-  if (this->speed() != 0) {
+  if (this->_internal_speed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_speed(), target);
   }
 
   // bool cruise_engaged = 2;
-  if (this->cruise_engaged() != 0) {
+  if (this->_internal_cruise_engaged() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_cruise_engaged(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_cruise_engaged(), target);
   }
 
   // bool cruise_set_speed = 3;
-  if (this->cruise_set_speed() != 0) {
+  if (this->_internal_cruise_set_speed() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_cruise_set_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_cruise_set_speed(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.data.Speed)
@@ -241,74 +250,53 @@ size_t Speed::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.data.Speed)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 speed = 1;
-  if (this->speed() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_speed());
+  if (this->_internal_speed() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_speed());
   }
 
   // bool cruise_engaged = 2;
-  if (this->cruise_engaged() != 0) {
+  if (this->_internal_cruise_engaged() != 0) {
     total_size += 1 + 1;
   }
 
   // bool cruise_set_speed = 3;
-  if (this->cruise_set_speed() != 0) {
+  if (this->_internal_cruise_set_speed() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Speed::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.data.Speed)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Speed* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Speed>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.data.Speed)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.data.Speed)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Speed::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Speed::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Speed::GetClassData() const { return &_class_data_; }
 
-void Speed::MergeFrom(const Speed& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Speed)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void Speed::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Speed*>(&to_msg);
+  auto& from = static_cast<const Speed&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Speed)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.speed() != 0) {
-    _internal_set_speed(from._internal_speed());
+  if (from._internal_speed() != 0) {
+    _this->_internal_set_speed(from._internal_speed());
   }
-  if (from.cruise_engaged() != 0) {
-    _internal_set_cruise_engaged(from._internal_cruise_engaged());
+  if (from._internal_cruise_engaged() != 0) {
+    _this->_internal_set_cruise_engaged(from._internal_cruise_engaged());
   }
-  if (from.cruise_set_speed() != 0) {
-    _internal_set_cruise_set_speed(from._internal_cruise_set_speed());
+  if (from._internal_cruise_set_speed() != 0) {
+    _this->_internal_set_cruise_set_speed(from._internal_cruise_set_speed());
   }
-}
-
-void Speed::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.data.Speed)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Speed::CopyFrom(const Speed& from) {
@@ -324,19 +312,20 @@ bool Speed::IsInitialized() const {
 
 void Speed::InternalSwap(Speed* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Speed, cruise_set_speed_)
-      + sizeof(Speed::cruise_set_speed_)
-      - PROTOBUF_FIELD_OFFSET(Speed, speed_)>(
-          reinterpret_cast<char*>(&speed_),
-          reinterpret_cast<char*>(&other->speed_));
+      PROTOBUF_FIELD_OFFSET(Speed, _impl_.cruise_set_speed_)
+      + sizeof(Speed::_impl_.cruise_set_speed_)
+      - PROTOBUF_FIELD_OFFSET(Speed, _impl_.speed_)>(
+          reinterpret_cast<char*>(&_impl_.speed_),
+          reinterpret_cast<char*>(&other->_impl_.speed_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Speed::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_SpeedData_2eproto_getter, &descriptor_table_SpeedData_2eproto_once,
+      file_level_metadata_SpeedData_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace data
@@ -344,7 +333,8 @@ void Speed::InternalSwap(Speed* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Speed* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Speed >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Speed*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Speed >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::data::Speed >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

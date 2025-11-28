@@ -14,55 +14,62 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace data {
-class VideoConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VideoConfig> _instance;
-} _VideoConfig_default_instance_;
+PROTOBUF_CONSTEXPR VideoConfig::VideoConfig(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.video_resolution_)*/0
+  , /*decltype(_impl_.video_fps_)*/0
+  , /*decltype(_impl_.margin_width_)*/0u
+  , /*decltype(_impl_.margin_height_)*/0u
+  , /*decltype(_impl_.dpi_)*/0u
+  , /*decltype(_impl_.additional_depth_)*/0u
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct VideoConfigDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VideoConfigDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VideoConfigDefaultTypeInternal() {}
+  union {
+    VideoConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VideoConfigDefaultTypeInternal _VideoConfig_default_instance_;
 }  // namespace data
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_VideoConfig_VideoConfigData_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_VideoConfigData_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_VideoConfigData_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_VideoConfigData_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::data::_VideoConfig_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::data::VideoConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::data::VideoConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VideoConfig_VideoConfigData_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VideoConfig_VideoConfigData_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_VideoConfigData_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_VideoConfigData_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_VideoConfigData_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_VideoConfigData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_VideoConfigData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, video_resolution_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, video_fps_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, margin_width_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, margin_height_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, dpi_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, additional_depth_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.video_resolution_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.video_fps_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.margin_width_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.margin_height_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.dpi_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::VideoConfig, _impl_.additional_depth_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::data::VideoConfig)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::data::VideoConfig)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::data::_VideoConfig_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::data::_VideoConfig_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_VideoConfigData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -76,23 +83,25 @@ const char descriptor_table_protodef_VideoConfigData_2eproto[] PROTOBUF_SECTION_
   "\r\022\013\n\003dpi\030\005 \001(\r\022\030\n\020additional_depth\030\006 \001(\r"
   "b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_VideoConfigData_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_VideoConfigData_2eproto_deps[2] = {
   &::descriptor_table_VideoFPSEnum_2eproto,
   &::descriptor_table_VideoResolutionEnum_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_VideoConfigData_2eproto_sccs[1] = {
-  &scc_info_VideoConfig_VideoConfigData_2eproto.base,
+static ::_pbi::once_flag descriptor_table_VideoConfigData_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_VideoConfigData_2eproto = {
+    false, false, 328, descriptor_table_protodef_VideoConfigData_2eproto,
+    "VideoConfigData.proto",
+    &descriptor_table_VideoConfigData_2eproto_once, descriptor_table_VideoConfigData_2eproto_deps, 2, 1,
+    schemas, file_default_instances, TableStruct_VideoConfigData_2eproto::offsets,
+    file_level_metadata_VideoConfigData_2eproto, file_level_enum_descriptors_VideoConfigData_2eproto,
+    file_level_service_descriptors_VideoConfigData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_VideoConfigData_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_VideoConfigData_2eproto = {
-  false, false, descriptor_table_protodef_VideoConfigData_2eproto, "VideoConfigData.proto", 328,
-  &descriptor_table_VideoConfigData_2eproto_once, descriptor_table_VideoConfigData_2eproto_sccs, descriptor_table_VideoConfigData_2eproto_deps, 1, 2,
-  schemas, file_default_instances, TableStruct_VideoConfigData_2eproto::offsets,
-  file_level_metadata_VideoConfigData_2eproto, 1, file_level_enum_descriptors_VideoConfigData_2eproto, file_level_service_descriptors_VideoConfigData_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_VideoConfigData_2eproto_getter() {
+  return &descriptor_table_VideoConfigData_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_VideoConfigData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_VideoConfigData_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_VideoConfigData_2eproto(&descriptor_table_VideoConfigData_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -100,190 +109,204 @@ namespace data {
 
 // ===================================================================
 
-void VideoConfig::InitAsDefaultInstance() {
-}
 class VideoConfig::_Internal {
  public:
 };
 
-VideoConfig::VideoConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+VideoConfig::VideoConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.data.VideoConfig)
 }
 VideoConfig::VideoConfig(const VideoConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VideoConfig* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.video_resolution_){}
+    , decltype(_impl_.video_fps_){}
+    , decltype(_impl_.margin_width_){}
+    , decltype(_impl_.margin_height_){}
+    , decltype(_impl_.dpi_){}
+    , decltype(_impl_.additional_depth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&video_resolution_, &from.video_resolution_,
-    static_cast<size_t>(reinterpret_cast<char*>(&additional_depth_) -
-    reinterpret_cast<char*>(&video_resolution_)) + sizeof(additional_depth_));
+  ::memcpy(&_impl_.video_resolution_, &from._impl_.video_resolution_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.additional_depth_) -
+    reinterpret_cast<char*>(&_impl_.video_resolution_)) + sizeof(_impl_.additional_depth_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.data.VideoConfig)
 }
 
-void VideoConfig::SharedCtor() {
-  ::memset(&video_resolution_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&additional_depth_) -
-      reinterpret_cast<char*>(&video_resolution_)) + sizeof(additional_depth_));
+inline void VideoConfig::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.video_resolution_){0}
+    , decltype(_impl_.video_fps_){0}
+    , decltype(_impl_.margin_width_){0u}
+    , decltype(_impl_.margin_height_){0u}
+    , decltype(_impl_.dpi_){0u}
+    , decltype(_impl_.additional_depth_){0u}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 VideoConfig::~VideoConfig() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.data.VideoConfig)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void VideoConfig::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void VideoConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void VideoConfig::ArenaDtor(void* object) {
-  VideoConfig* _this = reinterpret_cast< VideoConfig* >(object);
-  (void)_this;
-}
-void VideoConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void VideoConfig::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const VideoConfig& VideoConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VideoConfig_VideoConfigData_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void VideoConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.data.VideoConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&video_resolution_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&additional_depth_) -
-      reinterpret_cast<char*>(&video_resolution_)) + sizeof(additional_depth_));
+  ::memset(&_impl_.video_resolution_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.additional_depth_) -
+      reinterpret_cast<char*>(&_impl_.video_resolution_)) + sizeof(_impl_.additional_depth_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VideoConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VideoConfig::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .f1x.aasdk.proto.enums.VideoResolution.Enum video_resolution = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_video_resolution(static_cast<::f1x::aasdk::proto::enums::VideoResolution_Enum>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .f1x.aasdk.proto.enums.VideoFPS.Enum video_fps = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_video_fps(static_cast<::f1x::aasdk::proto::enums::VideoFPS_Enum>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 margin_width = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          margin_width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.margin_width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 margin_height = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          margin_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.margin_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 dpi = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          dpi_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.dpi_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 additional_depth = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          additional_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.additional_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* VideoConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* VideoConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.data.VideoConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.VideoResolution.Enum video_resolution = 1;
-  if (this->video_resolution() != 0) {
+  if (this->_internal_video_resolution() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_video_resolution(), target);
   }
 
   // .f1x.aasdk.proto.enums.VideoFPS.Enum video_fps = 2;
-  if (this->video_fps() != 0) {
+  if (this->_internal_video_fps() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       2, this->_internal_video_fps(), target);
   }
 
   // uint32 margin_width = 3;
-  if (this->margin_width() != 0) {
+  if (this->_internal_margin_width() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_margin_width(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_margin_width(), target);
   }
 
   // uint32 margin_height = 4;
-  if (this->margin_height() != 0) {
+  if (this->_internal_margin_height() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_margin_height(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_margin_height(), target);
   }
 
   // uint32 dpi = 5;
-  if (this->dpi() != 0) {
+  if (this->_internal_dpi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_dpi(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_dpi(), target);
   }
 
   // uint32 additional_depth = 6;
-  if (this->additional_depth() != 0) {
+  if (this->_internal_additional_depth() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_additional_depth(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_additional_depth(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.data.VideoConfig)
@@ -294,106 +317,79 @@ size_t VideoConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.data.VideoConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.VideoResolution.Enum video_resolution = 1;
-  if (this->video_resolution() != 0) {
+  if (this->_internal_video_resolution() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_video_resolution());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_video_resolution());
   }
 
   // .f1x.aasdk.proto.enums.VideoFPS.Enum video_fps = 2;
-  if (this->video_fps() != 0) {
+  if (this->_internal_video_fps() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_video_fps());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_video_fps());
   }
 
   // uint32 margin_width = 3;
-  if (this->margin_width() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_margin_width());
+  if (this->_internal_margin_width() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_margin_width());
   }
 
   // uint32 margin_height = 4;
-  if (this->margin_height() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_margin_height());
+  if (this->_internal_margin_height() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_margin_height());
   }
 
   // uint32 dpi = 5;
-  if (this->dpi() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_dpi());
+  if (this->_internal_dpi() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_dpi());
   }
 
   // uint32 additional_depth = 6;
-  if (this->additional_depth() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_additional_depth());
+  if (this->_internal_additional_depth() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_additional_depth());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void VideoConfig::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.data.VideoConfig)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VideoConfig* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VideoConfig>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.data.VideoConfig)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.data.VideoConfig)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VideoConfig::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    VideoConfig::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VideoConfig::GetClassData() const { return &_class_data_; }
 
-void VideoConfig::MergeFrom(const VideoConfig& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.VideoConfig)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void VideoConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<VideoConfig*>(&to_msg);
+  auto& from = static_cast<const VideoConfig&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.VideoConfig)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.video_resolution() != 0) {
-    _internal_set_video_resolution(from._internal_video_resolution());
+  if (from._internal_video_resolution() != 0) {
+    _this->_internal_set_video_resolution(from._internal_video_resolution());
   }
-  if (from.video_fps() != 0) {
-    _internal_set_video_fps(from._internal_video_fps());
+  if (from._internal_video_fps() != 0) {
+    _this->_internal_set_video_fps(from._internal_video_fps());
   }
-  if (from.margin_width() != 0) {
-    _internal_set_margin_width(from._internal_margin_width());
+  if (from._internal_margin_width() != 0) {
+    _this->_internal_set_margin_width(from._internal_margin_width());
   }
-  if (from.margin_height() != 0) {
-    _internal_set_margin_height(from._internal_margin_height());
+  if (from._internal_margin_height() != 0) {
+    _this->_internal_set_margin_height(from._internal_margin_height());
   }
-  if (from.dpi() != 0) {
-    _internal_set_dpi(from._internal_dpi());
+  if (from._internal_dpi() != 0) {
+    _this->_internal_set_dpi(from._internal_dpi());
   }
-  if (from.additional_depth() != 0) {
-    _internal_set_additional_depth(from._internal_additional_depth());
+  if (from._internal_additional_depth() != 0) {
+    _this->_internal_set_additional_depth(from._internal_additional_depth());
   }
-}
-
-void VideoConfig::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.data.VideoConfig)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void VideoConfig::CopyFrom(const VideoConfig& from) {
@@ -409,19 +405,20 @@ bool VideoConfig::IsInitialized() const {
 
 void VideoConfig::InternalSwap(VideoConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VideoConfig, additional_depth_)
-      + sizeof(VideoConfig::additional_depth_)
-      - PROTOBUF_FIELD_OFFSET(VideoConfig, video_resolution_)>(
-          reinterpret_cast<char*>(&video_resolution_),
-          reinterpret_cast<char*>(&other->video_resolution_));
+      PROTOBUF_FIELD_OFFSET(VideoConfig, _impl_.additional_depth_)
+      + sizeof(VideoConfig::_impl_.additional_depth_)
+      - PROTOBUF_FIELD_OFFSET(VideoConfig, _impl_.video_resolution_)>(
+          reinterpret_cast<char*>(&_impl_.video_resolution_),
+          reinterpret_cast<char*>(&other->_impl_.video_resolution_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoConfig::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_VideoConfigData_2eproto_getter, &descriptor_table_VideoConfigData_2eproto_once,
+      file_level_metadata_VideoConfigData_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace data
@@ -429,7 +426,8 @@ void VideoConfig::InternalSwap(VideoConfig* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::VideoConfig* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::VideoConfig >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::VideoConfig*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::VideoConfig >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::data::VideoConfig >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

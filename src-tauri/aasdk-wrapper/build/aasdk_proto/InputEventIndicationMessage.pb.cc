@@ -14,63 +14,62 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_AbsoluteInputEventsData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AbsoluteInputEvents_AbsoluteInputEventsData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ButtonEventsData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ButtonEvents_ButtonEventsData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_RelativeInputEventsData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RelativeInputEvents_RelativeInputEventsData_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_TouchEventData_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TouchEvent_TouchEventData_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace messages {
-class InputEventIndicationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<InputEventIndication> _instance;
-} _InputEventIndication_default_instance_;
+PROTOBUF_CONSTEXPR InputEventIndication::InputEventIndication(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.touch_event_)*/nullptr
+  , /*decltype(_impl_.button_event_)*/nullptr
+  , /*decltype(_impl_.absolute_input_event_)*/nullptr
+  , /*decltype(_impl_.relative_input_event_)*/nullptr
+  , /*decltype(_impl_.timestamp_)*/uint64_t{0u}
+  , /*decltype(_impl_.disp_channel_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct InputEventIndicationDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR InputEventIndicationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~InputEventIndicationDefaultTypeInternal() {}
+  union {
+    InputEventIndication _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InputEventIndicationDefaultTypeInternal _InputEventIndication_default_instance_;
 }  // namespace messages
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_InputEventIndication_InputEventIndicationMessage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_InputEventIndicationMessage_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_InputEventIndicationMessage_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_InputEventIndicationMessage_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::messages::InputEventIndication();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::messages::InputEventIndication::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_InputEventIndication_InputEventIndicationMessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_InputEventIndication_InputEventIndicationMessage_2eproto}, {
-      &scc_info_TouchEvent_TouchEventData_2eproto.base,
-      &scc_info_ButtonEvents_ButtonEventsData_2eproto.base,
-      &scc_info_AbsoluteInputEvents_AbsoluteInputEventsData_2eproto.base,
-      &scc_info_RelativeInputEvents_RelativeInputEventsData_2eproto.base,}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_InputEventIndicationMessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_InputEventIndicationMessage_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_InputEventIndicationMessage_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_InputEventIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_InputEventIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, timestamp_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, disp_channel_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, touch_event_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, button_event_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, absolute_input_event_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, relative_input_event_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.timestamp_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.disp_channel_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.touch_event_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.button_event_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.absolute_input_event_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::InputEventIndication, _impl_.relative_input_event_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::messages::InputEventIndication)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::messages::InputEventIndication)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_InputEventIndicationMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -88,25 +87,27 @@ const char descriptor_table_protodef_InputEventIndicationMessage_2eproto[] PROTO
   "event\030\006 \001(\0132).f1x.aasdk.proto.data.Relat"
   "iveInputEventsb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_InputEventIndicationMessage_2eproto_deps[4] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_InputEventIndicationMessage_2eproto_deps[4] = {
   &::descriptor_table_AbsoluteInputEventsData_2eproto,
   &::descriptor_table_ButtonEventsData_2eproto,
   &::descriptor_table_RelativeInputEventsData_2eproto,
   &::descriptor_table_TouchEventData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_InputEventIndicationMessage_2eproto_sccs[1] = {
-  &scc_info_InputEventIndication_InputEventIndicationMessage_2eproto.base,
+static ::_pbi::once_flag descriptor_table_InputEventIndicationMessage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_InputEventIndicationMessage_2eproto = {
+    false, false, 502, descriptor_table_protodef_InputEventIndicationMessage_2eproto,
+    "InputEventIndicationMessage.proto",
+    &descriptor_table_InputEventIndicationMessage_2eproto_once, descriptor_table_InputEventIndicationMessage_2eproto_deps, 4, 1,
+    schemas, file_default_instances, TableStruct_InputEventIndicationMessage_2eproto::offsets,
+    file_level_metadata_InputEventIndicationMessage_2eproto, file_level_enum_descriptors_InputEventIndicationMessage_2eproto,
+    file_level_service_descriptors_InputEventIndicationMessage_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_InputEventIndicationMessage_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_InputEventIndicationMessage_2eproto = {
-  false, false, descriptor_table_protodef_InputEventIndicationMessage_2eproto, "InputEventIndicationMessage.proto", 502,
-  &descriptor_table_InputEventIndicationMessage_2eproto_once, descriptor_table_InputEventIndicationMessage_2eproto_sccs, descriptor_table_InputEventIndicationMessage_2eproto_deps, 1, 4,
-  schemas, file_default_instances, TableStruct_InputEventIndicationMessage_2eproto::offsets,
-  file_level_metadata_InputEventIndicationMessage_2eproto, 1, file_level_enum_descriptors_InputEventIndicationMessage_2eproto, file_level_service_descriptors_InputEventIndicationMessage_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_InputEventIndicationMessage_2eproto_getter() {
+  return &descriptor_table_InputEventIndicationMessage_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_InputEventIndicationMessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_InputEventIndicationMessage_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_InputEventIndicationMessage_2eproto(&descriptor_table_InputEventIndicationMessage_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -114,16 +115,6 @@ namespace messages {
 
 // ===================================================================
 
-void InputEventIndication::InitAsDefaultInstance() {
-  ::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_._instance.get_mutable()->touch_event_ = const_cast< ::f1x::aasdk::proto::data::TouchEvent*>(
-      ::f1x::aasdk::proto::data::TouchEvent::internal_default_instance());
-  ::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_._instance.get_mutable()->button_event_ = const_cast< ::f1x::aasdk::proto::data::ButtonEvents*>(
-      ::f1x::aasdk::proto::data::ButtonEvents::internal_default_instance());
-  ::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_._instance.get_mutable()->absolute_input_event_ = const_cast< ::f1x::aasdk::proto::data::AbsoluteInputEvents*>(
-      ::f1x::aasdk::proto::data::AbsoluteInputEvents::internal_default_instance());
-  ::f1x::aasdk::proto::messages::_InputEventIndication_default_instance_._instance.get_mutable()->relative_input_event_ = const_cast< ::f1x::aasdk::proto::data::RelativeInputEvents*>(
-      ::f1x::aasdk::proto::data::RelativeInputEvents::internal_default_instance());
-}
 class InputEventIndication::_Internal {
  public:
   static const ::f1x::aasdk::proto::data::TouchEvent& touch_event(const InputEventIndication* msg);
@@ -134,267 +125,270 @@ class InputEventIndication::_Internal {
 
 const ::f1x::aasdk::proto::data::TouchEvent&
 InputEventIndication::_Internal::touch_event(const InputEventIndication* msg) {
-  return *msg->touch_event_;
+  return *msg->_impl_.touch_event_;
 }
 const ::f1x::aasdk::proto::data::ButtonEvents&
 InputEventIndication::_Internal::button_event(const InputEventIndication* msg) {
-  return *msg->button_event_;
+  return *msg->_impl_.button_event_;
 }
 const ::f1x::aasdk::proto::data::AbsoluteInputEvents&
 InputEventIndication::_Internal::absolute_input_event(const InputEventIndication* msg) {
-  return *msg->absolute_input_event_;
+  return *msg->_impl_.absolute_input_event_;
 }
 const ::f1x::aasdk::proto::data::RelativeInputEvents&
 InputEventIndication::_Internal::relative_input_event(const InputEventIndication* msg) {
-  return *msg->relative_input_event_;
+  return *msg->_impl_.relative_input_event_;
 }
 void InputEventIndication::clear_touch_event() {
-  if (GetArena() == nullptr && touch_event_ != nullptr) {
-    delete touch_event_;
+  if (GetArenaForAllocation() == nullptr && _impl_.touch_event_ != nullptr) {
+    delete _impl_.touch_event_;
   }
-  touch_event_ = nullptr;
+  _impl_.touch_event_ = nullptr;
 }
 void InputEventIndication::clear_button_event() {
-  if (GetArena() == nullptr && button_event_ != nullptr) {
-    delete button_event_;
+  if (GetArenaForAllocation() == nullptr && _impl_.button_event_ != nullptr) {
+    delete _impl_.button_event_;
   }
-  button_event_ = nullptr;
+  _impl_.button_event_ = nullptr;
 }
 void InputEventIndication::clear_absolute_input_event() {
-  if (GetArena() == nullptr && absolute_input_event_ != nullptr) {
-    delete absolute_input_event_;
+  if (GetArenaForAllocation() == nullptr && _impl_.absolute_input_event_ != nullptr) {
+    delete _impl_.absolute_input_event_;
   }
-  absolute_input_event_ = nullptr;
+  _impl_.absolute_input_event_ = nullptr;
 }
 void InputEventIndication::clear_relative_input_event() {
-  if (GetArena() == nullptr && relative_input_event_ != nullptr) {
-    delete relative_input_event_;
+  if (GetArenaForAllocation() == nullptr && _impl_.relative_input_event_ != nullptr) {
+    delete _impl_.relative_input_event_;
   }
-  relative_input_event_ = nullptr;
+  _impl_.relative_input_event_ = nullptr;
 }
-InputEventIndication::InputEventIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+InputEventIndication::InputEventIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.messages.InputEventIndication)
 }
 InputEventIndication::InputEventIndication(const InputEventIndication& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  InputEventIndication* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.touch_event_){nullptr}
+    , decltype(_impl_.button_event_){nullptr}
+    , decltype(_impl_.absolute_input_event_){nullptr}
+    , decltype(_impl_.relative_input_event_){nullptr}
+    , decltype(_impl_.timestamp_){}
+    , decltype(_impl_.disp_channel_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_touch_event()) {
-    touch_event_ = new ::f1x::aasdk::proto::data::TouchEvent(*from.touch_event_);
-  } else {
-    touch_event_ = nullptr;
+    _this->_impl_.touch_event_ = new ::f1x::aasdk::proto::data::TouchEvent(*from._impl_.touch_event_);
   }
   if (from._internal_has_button_event()) {
-    button_event_ = new ::f1x::aasdk::proto::data::ButtonEvents(*from.button_event_);
-  } else {
-    button_event_ = nullptr;
+    _this->_impl_.button_event_ = new ::f1x::aasdk::proto::data::ButtonEvents(*from._impl_.button_event_);
   }
   if (from._internal_has_absolute_input_event()) {
-    absolute_input_event_ = new ::f1x::aasdk::proto::data::AbsoluteInputEvents(*from.absolute_input_event_);
-  } else {
-    absolute_input_event_ = nullptr;
+    _this->_impl_.absolute_input_event_ = new ::f1x::aasdk::proto::data::AbsoluteInputEvents(*from._impl_.absolute_input_event_);
   }
   if (from._internal_has_relative_input_event()) {
-    relative_input_event_ = new ::f1x::aasdk::proto::data::RelativeInputEvents(*from.relative_input_event_);
-  } else {
-    relative_input_event_ = nullptr;
+    _this->_impl_.relative_input_event_ = new ::f1x::aasdk::proto::data::RelativeInputEvents(*from._impl_.relative_input_event_);
   }
-  ::memcpy(&timestamp_, &from.timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&disp_channel_) -
-    reinterpret_cast<char*>(&timestamp_)) + sizeof(disp_channel_));
+  ::memcpy(&_impl_.timestamp_, &from._impl_.timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.disp_channel_) -
+    reinterpret_cast<char*>(&_impl_.timestamp_)) + sizeof(_impl_.disp_channel_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.messages.InputEventIndication)
 }
 
-void InputEventIndication::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_InputEventIndication_InputEventIndicationMessage_2eproto.base);
-  ::memset(&touch_event_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&disp_channel_) -
-      reinterpret_cast<char*>(&touch_event_)) + sizeof(disp_channel_));
+inline void InputEventIndication::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.touch_event_){nullptr}
+    , decltype(_impl_.button_event_){nullptr}
+    , decltype(_impl_.absolute_input_event_){nullptr}
+    , decltype(_impl_.relative_input_event_){nullptr}
+    , decltype(_impl_.timestamp_){uint64_t{0u}}
+    , decltype(_impl_.disp_channel_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 InputEventIndication::~InputEventIndication() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.messages.InputEventIndication)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void InputEventIndication::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  if (this != internal_default_instance()) delete touch_event_;
-  if (this != internal_default_instance()) delete button_event_;
-  if (this != internal_default_instance()) delete absolute_input_event_;
-  if (this != internal_default_instance()) delete relative_input_event_;
+inline void InputEventIndication::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.touch_event_;
+  if (this != internal_default_instance()) delete _impl_.button_event_;
+  if (this != internal_default_instance()) delete _impl_.absolute_input_event_;
+  if (this != internal_default_instance()) delete _impl_.relative_input_event_;
 }
 
-void InputEventIndication::ArenaDtor(void* object) {
-  InputEventIndication* _this = reinterpret_cast< InputEventIndication* >(object);
-  (void)_this;
-}
-void InputEventIndication::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void InputEventIndication::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const InputEventIndication& InputEventIndication::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_InputEventIndication_InputEventIndicationMessage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void InputEventIndication::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.messages.InputEventIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && touch_event_ != nullptr) {
-    delete touch_event_;
+  if (GetArenaForAllocation() == nullptr && _impl_.touch_event_ != nullptr) {
+    delete _impl_.touch_event_;
   }
-  touch_event_ = nullptr;
-  if (GetArena() == nullptr && button_event_ != nullptr) {
-    delete button_event_;
+  _impl_.touch_event_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.button_event_ != nullptr) {
+    delete _impl_.button_event_;
   }
-  button_event_ = nullptr;
-  if (GetArena() == nullptr && absolute_input_event_ != nullptr) {
-    delete absolute_input_event_;
+  _impl_.button_event_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.absolute_input_event_ != nullptr) {
+    delete _impl_.absolute_input_event_;
   }
-  absolute_input_event_ = nullptr;
-  if (GetArena() == nullptr && relative_input_event_ != nullptr) {
-    delete relative_input_event_;
+  _impl_.absolute_input_event_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.relative_input_event_ != nullptr) {
+    delete _impl_.relative_input_event_;
   }
-  relative_input_event_ = nullptr;
-  ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&disp_channel_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(disp_channel_));
+  _impl_.relative_input_event_ = nullptr;
+  ::memset(&_impl_.timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.disp_channel_) -
+      reinterpret_cast<char*>(&_impl_.timestamp_)) + sizeof(_impl_.disp_channel_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* InputEventIndication::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* InputEventIndication::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // uint64 timestamp = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 disp_channel = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          disp_channel_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.disp_channel_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .f1x.aasdk.proto.data.TouchEvent touch_event = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_touch_event(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .f1x.aasdk.proto.data.ButtonEvents button_event = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_button_event(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .f1x.aasdk.proto.data.AbsoluteInputEvents absolute_input_event = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_absolute_input_event(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .f1x.aasdk.proto.data.RelativeInputEvents relative_input_event = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_relative_input_event(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* InputEventIndication::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* InputEventIndication::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.messages.InputEventIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 timestamp = 1;
-  if (this->timestamp() != 0) {
+  if (this->_internal_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_timestamp(), target);
   }
 
   // int32 disp_channel = 2;
-  if (this->disp_channel() != 0) {
+  if (this->_internal_disp_channel() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_disp_channel(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_disp_channel(), target);
   }
 
   // .f1x.aasdk.proto.data.TouchEvent touch_event = 3;
-  if (this->has_touch_event()) {
-    target = stream->EnsureSpace(target);
+  if (this->_internal_has_touch_event()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        3, _Internal::touch_event(this), target, stream);
+      InternalWriteMessage(3, _Internal::touch_event(this),
+        _Internal::touch_event(this).GetCachedSize(), target, stream);
   }
 
   // .f1x.aasdk.proto.data.ButtonEvents button_event = 4;
-  if (this->has_button_event()) {
-    target = stream->EnsureSpace(target);
+  if (this->_internal_has_button_event()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        4, _Internal::button_event(this), target, stream);
+      InternalWriteMessage(4, _Internal::button_event(this),
+        _Internal::button_event(this).GetCachedSize(), target, stream);
   }
 
   // .f1x.aasdk.proto.data.AbsoluteInputEvents absolute_input_event = 5;
-  if (this->has_absolute_input_event()) {
-    target = stream->EnsureSpace(target);
+  if (this->_internal_has_absolute_input_event()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::absolute_input_event(this), target, stream);
+      InternalWriteMessage(5, _Internal::absolute_input_event(this),
+        _Internal::absolute_input_event(this).GetCachedSize(), target, stream);
   }
 
   // .f1x.aasdk.proto.data.RelativeInputEvents relative_input_event = 6;
-  if (this->has_relative_input_event()) {
-    target = stream->EnsureSpace(target);
+  if (this->_internal_has_relative_input_event()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        6, _Internal::relative_input_event(this), target, stream);
+      InternalWriteMessage(6, _Internal::relative_input_event(this),
+        _Internal::relative_input_event(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.messages.InputEventIndication)
@@ -405,108 +399,89 @@ size_t InputEventIndication::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.messages.InputEventIndication)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.data.TouchEvent touch_event = 3;
-  if (this->has_touch_event()) {
+  if (this->_internal_has_touch_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *touch_event_);
+        *_impl_.touch_event_);
   }
 
   // .f1x.aasdk.proto.data.ButtonEvents button_event = 4;
-  if (this->has_button_event()) {
+  if (this->_internal_has_button_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *button_event_);
+        *_impl_.button_event_);
   }
 
   // .f1x.aasdk.proto.data.AbsoluteInputEvents absolute_input_event = 5;
-  if (this->has_absolute_input_event()) {
+  if (this->_internal_has_absolute_input_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *absolute_input_event_);
+        *_impl_.absolute_input_event_);
   }
 
   // .f1x.aasdk.proto.data.RelativeInputEvents relative_input_event = 6;
-  if (this->has_relative_input_event()) {
+  if (this->_internal_has_relative_input_event()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *relative_input_event_);
+        *_impl_.relative_input_event_);
   }
 
   // uint64 timestamp = 1;
-  if (this->timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_timestamp());
+  if (this->_internal_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp());
   }
 
   // int32 disp_channel = 2;
-  if (this->disp_channel() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_disp_channel());
+  if (this->_internal_disp_channel() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_disp_channel());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void InputEventIndication::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.messages.InputEventIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  const InputEventIndication* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<InputEventIndication>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.messages.InputEventIndication)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.messages.InputEventIndication)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InputEventIndication::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    InputEventIndication::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InputEventIndication::GetClassData() const { return &_class_data_; }
 
-void InputEventIndication::MergeFrom(const InputEventIndication& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.InputEventIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void InputEventIndication::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<InputEventIndication*>(&to_msg);
+  auto& from = static_cast<const InputEventIndication&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.InputEventIndication)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_touch_event()) {
-    _internal_mutable_touch_event()->::f1x::aasdk::proto::data::TouchEvent::MergeFrom(from._internal_touch_event());
+  if (from._internal_has_touch_event()) {
+    _this->_internal_mutable_touch_event()->::f1x::aasdk::proto::data::TouchEvent::MergeFrom(
+        from._internal_touch_event());
   }
-  if (from.has_button_event()) {
-    _internal_mutable_button_event()->::f1x::aasdk::proto::data::ButtonEvents::MergeFrom(from._internal_button_event());
+  if (from._internal_has_button_event()) {
+    _this->_internal_mutable_button_event()->::f1x::aasdk::proto::data::ButtonEvents::MergeFrom(
+        from._internal_button_event());
   }
-  if (from.has_absolute_input_event()) {
-    _internal_mutable_absolute_input_event()->::f1x::aasdk::proto::data::AbsoluteInputEvents::MergeFrom(from._internal_absolute_input_event());
+  if (from._internal_has_absolute_input_event()) {
+    _this->_internal_mutable_absolute_input_event()->::f1x::aasdk::proto::data::AbsoluteInputEvents::MergeFrom(
+        from._internal_absolute_input_event());
   }
-  if (from.has_relative_input_event()) {
-    _internal_mutable_relative_input_event()->::f1x::aasdk::proto::data::RelativeInputEvents::MergeFrom(from._internal_relative_input_event());
+  if (from._internal_has_relative_input_event()) {
+    _this->_internal_mutable_relative_input_event()->::f1x::aasdk::proto::data::RelativeInputEvents::MergeFrom(
+        from._internal_relative_input_event());
   }
-  if (from.timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal_timestamp() != 0) {
+    _this->_internal_set_timestamp(from._internal_timestamp());
   }
-  if (from.disp_channel() != 0) {
-    _internal_set_disp_channel(from._internal_disp_channel());
+  if (from._internal_disp_channel() != 0) {
+    _this->_internal_set_disp_channel(from._internal_disp_channel());
   }
-}
-
-void InputEventIndication::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.messages.InputEventIndication)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void InputEventIndication::CopyFrom(const InputEventIndication& from) {
@@ -522,19 +497,20 @@ bool InputEventIndication::IsInitialized() const {
 
 void InputEventIndication::InternalSwap(InputEventIndication* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(InputEventIndication, disp_channel_)
-      + sizeof(InputEventIndication::disp_channel_)
-      - PROTOBUF_FIELD_OFFSET(InputEventIndication, touch_event_)>(
-          reinterpret_cast<char*>(&touch_event_),
-          reinterpret_cast<char*>(&other->touch_event_));
+      PROTOBUF_FIELD_OFFSET(InputEventIndication, _impl_.disp_channel_)
+      + sizeof(InputEventIndication::_impl_.disp_channel_)
+      - PROTOBUF_FIELD_OFFSET(InputEventIndication, _impl_.touch_event_)>(
+          reinterpret_cast<char*>(&_impl_.touch_event_),
+          reinterpret_cast<char*>(&other->_impl_.touch_event_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InputEventIndication::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_InputEventIndicationMessage_2eproto_getter, &descriptor_table_InputEventIndicationMessage_2eproto_once,
+      file_level_metadata_InputEventIndicationMessage_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messages
@@ -542,7 +518,8 @@ void InputEventIndication::InternalSwap(InputEventIndication* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::InputEventIndication* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::InputEventIndication >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::InputEventIndication*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::InputEventIndication >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::messages::InputEventIndication >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

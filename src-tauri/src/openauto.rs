@@ -1,18 +1,23 @@
 // OpenAuto integration module using AASDK directly
 // This integrates Android Auto directly into the Tauri app without launching a separate process
 use std::sync::{Arc, Mutex, atomic::{AtomicBool, Ordering}};
+use std::sync::mpsc::{channel, Sender, Receiver};
 use anyhow::Result;
 use crate::aasdk_bindings::*;
 
 // Static connection status for callbacks
 static CONNECTION_STATUS: AtomicBool = AtomicBool::new(false);
 
+// Static video frame sender for callbacks
+static VIDEO_SENDER: Mutex<Option<Sender<VideoFrame>>> = Mutex::new(None);
+
 pub struct OpenAutoManager {
     enabled: Arc<Mutex<bool>>,
     handle: Arc<Mutex<Option<crate::aasdk_bindings::AASDKHandleWrapper>>>,
+    video_rx: Arc<Mutex<Option<Receiver<VideoFrame>>>>,
 }
 
-#[allow(dead_code)]
+#[derive(Clone, serde::Serialize)]
 pub struct VideoFrame {
     pub data: Vec<u8>,
     pub width: u32,
@@ -25,6 +30,7 @@ impl OpenAutoManager {
         Self {
             enabled: Arc::new(Mutex::new(false)),
             handle: Arc::new(Mutex::new(None)),
+            video_rx: Arc::new(Mutex::new(None)),
         }
     }
 
@@ -35,7 +41,22 @@ impl OpenAutoManager {
         }
 
         eprintln!("Starting Android Auto via AASDK...");
-        
+
+        // Create video frame channel
+        let (tx, rx) = channel::<VideoFrame>();
+
+        // Store the sender in the static mutex for callback access
+        {
+            let mut sender = VIDEO_SENDER.lock().unwrap();
+            *sender = Some(tx);
+        }
+
+        // Store the receiver in the manager
+        {
+            let mut video_rx = self.video_rx.lock().unwrap();
+            *video_rx = Some(rx);
+        }
+
         // Initialize AASDK with callbacks
         let handle = unsafe {
             aasdk_init(
@@ -45,17 +66,17 @@ impl OpenAutoManager {
                 std::ptr::null_mut(), // No user data needed for now
             )
         };
-        
+
         if handle.is_null() {
             return Err(anyhow::anyhow!("Failed to initialize AASDK"));
         }
-        
+
         // Store handle
         {
             let mut handle_mutex = self.handle.lock().unwrap();
             *handle_mutex = Some(crate::aasdk_bindings::AASDKHandleWrapper(handle));
         }
-        
+
         // Start AASDK (this will start USB device discovery)
         let started = unsafe { aasdk_start(handle) };
         if !started {
@@ -64,7 +85,7 @@ impl OpenAutoManager {
             *handle_mutex = None;
             return Err(anyhow::anyhow!("Failed to start AASDK"));
         }
-        
+
         *enabled = true;
         eprintln!("Android Auto started - waiting for USB device connection...");
         Ok(())
@@ -77,7 +98,17 @@ impl OpenAutoManager {
         }
 
         eprintln!("Stopping Android Auto...");
-        
+
+        // Clear video channel
+        {
+            let mut sender = VIDEO_SENDER.lock().unwrap();
+            *sender = None;
+        }
+        {
+            let mut video_rx = self.video_rx.lock().unwrap();
+            *video_rx = None;
+        }
+
         // Stop and cleanup AASDK
         let mut handle_mutex = self.handle.lock().unwrap();
         if let Some(handle_wrapper) = handle_mutex.take() {
@@ -87,7 +118,7 @@ impl OpenAutoManager {
                 aasdk_deinit(handle);
             }
         }
-        
+
         *enabled = false;
         eprintln!("Android Auto stopped");
         Ok(())
@@ -103,10 +134,32 @@ impl OpenAutoManager {
     }
 
     /// Get the latest video frame (for rendering in Tauri window)
-    #[allow(dead_code)]
+    /// This is a non-blocking call that returns immediately
     pub fn get_video_frame(&self) -> Option<VideoFrame> {
-        // TODO: Return latest video frame from AASDK
-        None
+        let video_rx = self.video_rx.lock().unwrap();
+        if let Some(ref rx) = *video_rx {
+            // Try to receive without blocking
+            match rx.try_recv() {
+                Ok(frame) => Some(frame),
+                Err(_) => None, // No frame available or channel disconnected
+            }
+        } else {
+            None
+        }
+    }
+
+    /// Try to receive the next video frame, blocking until one is available
+    /// Returns None if the channel is closed or timeout
+    pub fn recv_video_frame_timeout(&self, timeout: std::time::Duration) -> Option<VideoFrame> {
+        let video_rx = self.video_rx.lock().unwrap();
+        if let Some(ref rx) = *video_rx {
+            match rx.recv_timeout(timeout) {
+                Ok(frame) => Some(frame),
+                Err(_) => None,
+            }
+        } else {
+            None
+        }
     }
 
     /// Send touch input to Android Auto
@@ -158,13 +211,45 @@ extern "C" fn video_frame_callback(
     data: *const u8,
     width: u32,
     height: u32,
-    stride: u32,
+    buffer_size: u32,
     _user_data: *mut std::ffi::c_void,
 ) {
     // This will be called from the C wrapper when a new frame arrives
-    if !data.is_null() {
-        // TODO: Send frame to channel for processing in Rust
-        eprintln!("Received video frame: {}x{} (stride: {})", width, height, stride);
+    if data.is_null() {
+        return;
+    }
+
+    // For H.264 data, buffer_size is the actual compressed data size
+    // NOT stride (which would be for raw pixel data)
+    let frame_size = buffer_size as usize;
+
+    // Copy the frame data into a Vec
+    let frame_data = unsafe {
+        std::slice::from_raw_parts(data, frame_size).to_vec()
+    };
+
+    // Create the video frame
+    let frame = VideoFrame {
+        data: frame_data,
+        width,
+        height,
+        stride: buffer_size, // Store buffer size in stride field
+    };
+
+    // Send frame through the channel
+    if let Ok(sender_guard) = VIDEO_SENDER.lock() {
+        if let Some(ref sender) = *sender_guard {
+            // Use try_send to avoid blocking if the channel is full
+            // This will drop frames if the consumer is too slow
+            match sender.send(frame) {
+                Ok(_) => {
+                    // Frame sent successfully - don't log every frame
+                }
+                Err(_) => {
+                    eprintln!("Warning: Video frame channel full or disconnected");
+                }
+            }
+        }
     }
 }
 

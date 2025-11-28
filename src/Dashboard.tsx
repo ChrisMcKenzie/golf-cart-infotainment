@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
-import { IoPlayForwardOutline, IoPlayBackOutline } from "react-icons/io5";
+// import { IoPlayForwardOutline, IoPlayBackOutline } from "react-icons/io5";
 import { PiHeadlights } from "react-icons/pi";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { TiBatteryFull } from "react-icons/ti";
 import { GiGearStick } from "react-icons/gi";
+import AndroidAutoDisplay from "./AndroidAutoDisplay";
 import "./Dashboard.css";
 
 interface HardwareStatus {
@@ -38,12 +39,12 @@ export default function Dashboard() {
   });
   const [openAutoRunning, setOpenAutoRunning] = useState(false);
   const [openAutoConnected, setOpenAutoConnected] = useState(false);
-  const [currentTrack] = useState({
-    artist: "Raquel Ramos",
-    title: "I Want Your Man To Be My...",
-  });
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(50);
+  // const [currentTrack] = useState({
+  //   artist: "Raquel Ramos",
+  //   title: "I Want Your Man To Be My...",
+  // });
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const [volume, setVolume] = useState(50);
 
   useEffect(() => {
     // Poll hardware status every 100ms
@@ -120,10 +121,10 @@ export default function Dashboard() {
     }
   };
 
-  const handleVolumeChange = async (newVolume: number) => {
-    setVolume(newVolume);
-    await invoke("set_audio_volume", { volume: newVolume / 100 });
-  };
+  // const handleVolumeChange = async (newVolume: number) => {
+  //   setVolume(newVolume);
+  //   await invoke("set_audio_volume", { volume: newVolume / 100 });
+  // };
 
 
   return (
@@ -207,24 +208,32 @@ export default function Dashboard() {
 
         {/* Android Auto Integration Area */}
         <section className="openauto-section">
-          <div className="openauto-content">
-            {openAutoRunning ? (
-              <>
-                <p>Android Auto {openAutoConnected ? "Connected" : "Waiting for Device..."}</p>
-                {openAutoConnected && <p style={{fontSize: "0.8em", opacity: 0.7}}>USB device detected and connected</p>}
+          {openAutoRunning ? (
+            <>
+              <div className="openauto-video-container">
+                <AndroidAutoDisplay isConnected={openAutoConnected} />
+              </div>
+              <div className="openauto-controls">
                 <button className="openauto-btn stop" onClick={handleStopOpenAuto}>
                   Stop Android Auto
                 </button>
-              </>
-            ) : (
-              <>
-                <p>Android Auto</p>
-                <button className="openauto-btn start" onClick={handleStartOpenAuto}>
-                  Start Android Auto
-                </button>
-              </>
-            )}
-          </div>
+                <div className="connection-status">
+                  {openAutoConnected ? (
+                    <span className="status-connected">● Connected</span>
+                  ) : (
+                    <span className="status-waiting">○ Waiting for device...</span>
+                  )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="openauto-content">
+              <p>Android Auto</p>
+              <button className="openauto-btn start" onClick={handleStartOpenAuto}>
+                Start Android Auto
+              </button>
+            </div>
+          )}
         </section>
       </main>
 

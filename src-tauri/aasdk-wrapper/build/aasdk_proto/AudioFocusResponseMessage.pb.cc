@@ -14,50 +14,52 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace messages {
-class AudioFocusResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AudioFocusResponse> _instance;
-} _AudioFocusResponse_default_instance_;
+PROTOBUF_CONSTEXPR AudioFocusResponse::AudioFocusResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.audio_focus_state_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct AudioFocusResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AudioFocusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AudioFocusResponseDefaultTypeInternal() {}
+  union {
+    AudioFocusResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AudioFocusResponseDefaultTypeInternal _AudioFocusResponse_default_instance_;
 }  // namespace messages
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_AudioFocusResponse_AudioFocusResponseMessage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_AudioFocusResponseMessage_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_AudioFocusResponseMessage_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_AudioFocusResponseMessage_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::messages::_AudioFocusResponse_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::messages::AudioFocusResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::messages::AudioFocusResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioFocusResponse_AudioFocusResponseMessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AudioFocusResponse_AudioFocusResponseMessage_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_AudioFocusResponseMessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_AudioFocusResponseMessage_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_AudioFocusResponseMessage_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_AudioFocusResponseMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_AudioFocusResponseMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::AudioFocusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::AudioFocusResponse, audio_focus_state_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::AudioFocusResponse, _impl_.audio_focus_state_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::messages::AudioFocusResponse)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::messages::AudioFocusResponse)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::messages::_AudioFocusResponse_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::messages::_AudioFocusResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_AudioFocusResponseMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -67,22 +69,24 @@ const char descriptor_table_protodef_AudioFocusResponseMessage_2eproto[] PROTOBU
   "cus_state\030\001 \001(\0162+.f1x.aasdk.proto.enums."
   "AudioFocusState.Enumb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_AudioFocusResponseMessage_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_AudioFocusResponseMessage_2eproto_deps[1] = {
   &::descriptor_table_AudioFocusStateEnum_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_AudioFocusResponseMessage_2eproto_sccs[1] = {
-  &scc_info_AudioFocusResponse_AudioFocusResponseMessage_2eproto.base,
+static ::_pbi::once_flag descriptor_table_AudioFocusResponseMessage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_AudioFocusResponseMessage_2eproto = {
+    false, false, 188, descriptor_table_protodef_AudioFocusResponseMessage_2eproto,
+    "AudioFocusResponseMessage.proto",
+    &descriptor_table_AudioFocusResponseMessage_2eproto_once, descriptor_table_AudioFocusResponseMessage_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_AudioFocusResponseMessage_2eproto::offsets,
+    file_level_metadata_AudioFocusResponseMessage_2eproto, file_level_enum_descriptors_AudioFocusResponseMessage_2eproto,
+    file_level_service_descriptors_AudioFocusResponseMessage_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_AudioFocusResponseMessage_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_AudioFocusResponseMessage_2eproto = {
-  false, false, descriptor_table_protodef_AudioFocusResponseMessage_2eproto, "AudioFocusResponseMessage.proto", 188,
-  &descriptor_table_AudioFocusResponseMessage_2eproto_once, descriptor_table_AudioFocusResponseMessage_2eproto_sccs, descriptor_table_AudioFocusResponseMessage_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_AudioFocusResponseMessage_2eproto::offsets,
-  file_level_metadata_AudioFocusResponseMessage_2eproto, 1, file_level_enum_descriptors_AudioFocusResponseMessage_2eproto, file_level_service_descriptors_AudioFocusResponseMessage_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_AudioFocusResponseMessage_2eproto_getter() {
+  return &descriptor_table_AudioFocusResponseMessage_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_AudioFocusResponseMessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_AudioFocusResponseMessage_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_AudioFocusResponseMessage_2eproto(&descriptor_table_AudioFocusResponseMessage_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -90,117 +94,118 @@ namespace messages {
 
 // ===================================================================
 
-void AudioFocusResponse::InitAsDefaultInstance() {
-}
 class AudioFocusResponse::_Internal {
  public:
 };
 
-AudioFocusResponse::AudioFocusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+AudioFocusResponse::AudioFocusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.messages.AudioFocusResponse)
 }
 AudioFocusResponse::AudioFocusResponse(const AudioFocusResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AudioFocusResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.audio_focus_state_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  audio_focus_state_ = from.audio_focus_state_;
+  _this->_impl_.audio_focus_state_ = from._impl_.audio_focus_state_;
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.messages.AudioFocusResponse)
 }
 
-void AudioFocusResponse::SharedCtor() {
-  audio_focus_state_ = 0;
+inline void AudioFocusResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.audio_focus_state_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 AudioFocusResponse::~AudioFocusResponse() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.messages.AudioFocusResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void AudioFocusResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void AudioFocusResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void AudioFocusResponse::ArenaDtor(void* object) {
-  AudioFocusResponse* _this = reinterpret_cast< AudioFocusResponse* >(object);
-  (void)_this;
-}
-void AudioFocusResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void AudioFocusResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const AudioFocusResponse& AudioFocusResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AudioFocusResponse_AudioFocusResponseMessage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AudioFocusResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.messages.AudioFocusResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  audio_focus_state_ = 0;
+  _impl_.audio_focus_state_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AudioFocusResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* AudioFocusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .f1x.aasdk.proto.enums.AudioFocusState.Enum audio_focus_state = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_audio_focus_state(static_cast<::f1x::aasdk::proto::enums::AudioFocusState_Enum>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AudioFocusResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AudioFocusResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.messages.AudioFocusResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.AudioFocusState.Enum audio_focus_state = 1;
-  if (this->audio_focus_state() != 0) {
+  if (this->_internal_audio_focus_state() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_audio_focus_state(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.messages.AudioFocusResponse)
@@ -211,57 +216,38 @@ size_t AudioFocusResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.messages.AudioFocusResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.AudioFocusState.Enum audio_focus_state = 1;
-  if (this->audio_focus_state() != 0) {
+  if (this->_internal_audio_focus_state() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_audio_focus_state());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_audio_focus_state());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void AudioFocusResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.messages.AudioFocusResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const AudioFocusResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AudioFocusResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.messages.AudioFocusResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.messages.AudioFocusResponse)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AudioFocusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AudioFocusResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AudioFocusResponse::GetClassData() const { return &_class_data_; }
 
-void AudioFocusResponse::MergeFrom(const AudioFocusResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.AudioFocusResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void AudioFocusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AudioFocusResponse*>(&to_msg);
+  auto& from = static_cast<const AudioFocusResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.AudioFocusResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.audio_focus_state() != 0) {
-    _internal_set_audio_focus_state(from._internal_audio_focus_state());
+  if (from._internal_audio_focus_state() != 0) {
+    _this->_internal_set_audio_focus_state(from._internal_audio_focus_state());
   }
-}
-
-void AudioFocusResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.messages.AudioFocusResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AudioFocusResponse::CopyFrom(const AudioFocusResponse& from) {
@@ -277,14 +263,15 @@ bool AudioFocusResponse::IsInitialized() const {
 
 void AudioFocusResponse::InternalSwap(AudioFocusResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(audio_focus_state_, other->audio_focus_state_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.audio_focus_state_, other->_impl_.audio_focus_state_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AudioFocusResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_AudioFocusResponseMessage_2eproto_getter, &descriptor_table_AudioFocusResponseMessage_2eproto_once,
+      file_level_metadata_AudioFocusResponseMessage_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messages
@@ -292,7 +279,8 @@ void AudioFocusResponse::InternalSwap(AudioFocusResponse* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::AudioFocusResponse* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::AudioFocusResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::AudioFocusResponse*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::AudioFocusResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::messages::AudioFocusResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

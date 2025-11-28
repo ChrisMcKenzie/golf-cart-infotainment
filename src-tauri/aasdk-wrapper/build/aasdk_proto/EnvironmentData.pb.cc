@@ -14,52 +14,56 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace data {
-class EnvironmentDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Environment> _instance;
-} _Environment_default_instance_;
+PROTOBUF_CONSTEXPR Environment::Environment(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.temperature_)*/0
+  , /*decltype(_impl_.pressure_)*/0
+  , /*decltype(_impl_.rain_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct EnvironmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EnvironmentDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EnvironmentDefaultTypeInternal() {}
+  union {
+    Environment _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EnvironmentDefaultTypeInternal _Environment_default_instance_;
 }  // namespace data
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_Environment_EnvironmentData_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_EnvironmentData_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_EnvironmentData_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_EnvironmentData_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::data::_Environment_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::data::Environment();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::data::Environment::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Environment_EnvironmentData_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Environment_EnvironmentData_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_EnvironmentData_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_EnvironmentData_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_EnvironmentData_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_EnvironmentData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_EnvironmentData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, temperature_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, pressure_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, rain_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, _impl_.temperature_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, _impl_.pressure_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Environment, _impl_.rain_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::data::Environment)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::data::Environment)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::data::_Environment_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::data::_Environment_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_EnvironmentData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -68,21 +72,21 @@ const char descriptor_table_protodef_EnvironmentData_2eproto[] PROTOBUF_SECTION_
   "\005\022\020\n\010pressure\030\002 \001(\005\022\014\n\004rain\030\003 \001(\005b\006proto"
   "3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_EnvironmentData_2eproto_deps[1] = {
+static ::_pbi::once_flag descriptor_table_EnvironmentData_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_EnvironmentData_2eproto = {
+    false, false, 121, descriptor_table_protodef_EnvironmentData_2eproto,
+    "EnvironmentData.proto",
+    &descriptor_table_EnvironmentData_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_EnvironmentData_2eproto::offsets,
+    file_level_metadata_EnvironmentData_2eproto, file_level_enum_descriptors_EnvironmentData_2eproto,
+    file_level_service_descriptors_EnvironmentData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_EnvironmentData_2eproto_sccs[1] = {
-  &scc_info_Environment_EnvironmentData_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_EnvironmentData_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_EnvironmentData_2eproto = {
-  false, false, descriptor_table_protodef_EnvironmentData_2eproto, "EnvironmentData.proto", 121,
-  &descriptor_table_EnvironmentData_2eproto_once, descriptor_table_EnvironmentData_2eproto_sccs, descriptor_table_EnvironmentData_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_EnvironmentData_2eproto::offsets,
-  file_level_metadata_EnvironmentData_2eproto, 1, file_level_enum_descriptors_EnvironmentData_2eproto, file_level_service_descriptors_EnvironmentData_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_EnvironmentData_2eproto_getter() {
+  return &descriptor_table_EnvironmentData_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_EnvironmentData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_EnvironmentData_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_EnvironmentData_2eproto(&descriptor_table_EnvironmentData_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -90,147 +94,152 @@ namespace data {
 
 // ===================================================================
 
-void Environment::InitAsDefaultInstance() {
-}
 class Environment::_Internal {
  public:
 };
 
-Environment::Environment(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+Environment::Environment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.data.Environment)
 }
 Environment::Environment(const Environment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Environment* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.temperature_){}
+    , decltype(_impl_.pressure_){}
+    , decltype(_impl_.rain_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&temperature_, &from.temperature_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rain_) -
-    reinterpret_cast<char*>(&temperature_)) + sizeof(rain_));
+  ::memcpy(&_impl_.temperature_, &from._impl_.temperature_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.rain_) -
+    reinterpret_cast<char*>(&_impl_.temperature_)) + sizeof(_impl_.rain_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.data.Environment)
 }
 
-void Environment::SharedCtor() {
-  ::memset(&temperature_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rain_) -
-      reinterpret_cast<char*>(&temperature_)) + sizeof(rain_));
+inline void Environment::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.temperature_){0}
+    , decltype(_impl_.pressure_){0}
+    , decltype(_impl_.rain_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Environment::~Environment() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.data.Environment)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Environment::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void Environment::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void Environment::ArenaDtor(void* object) {
-  Environment* _this = reinterpret_cast< Environment* >(object);
-  (void)_this;
-}
-void Environment::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Environment::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const Environment& Environment::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Environment_EnvironmentData_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Environment::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.data.Environment)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&temperature_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rain_) -
-      reinterpret_cast<char*>(&temperature_)) + sizeof(rain_));
+  ::memset(&_impl_.temperature_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.rain_) -
+      reinterpret_cast<char*>(&_impl_.temperature_)) + sizeof(_impl_.rain_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Environment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Environment::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 temperature = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 pressure = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 rain = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          rain_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.rain_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Environment::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Environment::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.data.Environment)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 temperature = 1;
-  if (this->temperature() != 0) {
+  if (this->_internal_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_temperature(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_temperature(), target);
   }
 
   // int32 pressure = 2;
-  if (this->pressure() != 0) {
+  if (this->_internal_pressure() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_pressure(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_pressure(), target);
   }
 
   // int32 rain = 3;
-  if (this->rain() != 0) {
+  if (this->_internal_rain() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_rain(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_rain(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.data.Environment)
@@ -241,78 +250,53 @@ size_t Environment::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.data.Environment)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 temperature = 1;
-  if (this->temperature() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_temperature());
+  if (this->_internal_temperature() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_temperature());
   }
 
   // int32 pressure = 2;
-  if (this->pressure() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_pressure());
+  if (this->_internal_pressure() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_pressure());
   }
 
   // int32 rain = 3;
-  if (this->rain() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_rain());
+  if (this->_internal_rain() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_rain());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Environment::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.data.Environment)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Environment* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Environment>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.data.Environment)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.data.Environment)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Environment::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Environment::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Environment::GetClassData() const { return &_class_data_; }
 
-void Environment::MergeFrom(const Environment& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Environment)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void Environment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Environment*>(&to_msg);
+  auto& from = static_cast<const Environment&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Environment)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.temperature() != 0) {
-    _internal_set_temperature(from._internal_temperature());
+  if (from._internal_temperature() != 0) {
+    _this->_internal_set_temperature(from._internal_temperature());
   }
-  if (from.pressure() != 0) {
-    _internal_set_pressure(from._internal_pressure());
+  if (from._internal_pressure() != 0) {
+    _this->_internal_set_pressure(from._internal_pressure());
   }
-  if (from.rain() != 0) {
-    _internal_set_rain(from._internal_rain());
+  if (from._internal_rain() != 0) {
+    _this->_internal_set_rain(from._internal_rain());
   }
-}
-
-void Environment::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.data.Environment)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Environment::CopyFrom(const Environment& from) {
@@ -328,19 +312,20 @@ bool Environment::IsInitialized() const {
 
 void Environment::InternalSwap(Environment* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Environment, rain_)
-      + sizeof(Environment::rain_)
-      - PROTOBUF_FIELD_OFFSET(Environment, temperature_)>(
-          reinterpret_cast<char*>(&temperature_),
-          reinterpret_cast<char*>(&other->temperature_));
+      PROTOBUF_FIELD_OFFSET(Environment, _impl_.rain_)
+      + sizeof(Environment::_impl_.rain_)
+      - PROTOBUF_FIELD_OFFSET(Environment, _impl_.temperature_)>(
+          reinterpret_cast<char*>(&_impl_.temperature_),
+          reinterpret_cast<char*>(&other->_impl_.temperature_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Environment::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_EnvironmentData_2eproto_getter, &descriptor_table_EnvironmentData_2eproto_once,
+      file_level_metadata_EnvironmentData_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace data
@@ -348,7 +333,8 @@ void Environment::InternalSwap(Environment* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Environment* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Environment >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Environment*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Environment >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::data::Environment >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

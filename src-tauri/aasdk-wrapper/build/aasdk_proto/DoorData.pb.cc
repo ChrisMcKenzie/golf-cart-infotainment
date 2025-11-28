@@ -14,52 +14,56 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace data {
-class DoorDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Door> _instance;
-} _Door_default_instance_;
+PROTOBUF_CONSTEXPR Door::Door(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.door_open_)*/{}
+  , /*decltype(_impl_.hood_open_)*/false
+  , /*decltype(_impl_.boot_open_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct DoorDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DoorDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DoorDefaultTypeInternal() {}
+  union {
+    Door _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DoorDefaultTypeInternal _Door_default_instance_;
 }  // namespace data
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_Door_DoorData_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_DoorData_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_DoorData_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_DoorData_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::data::_Door_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::data::Door();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::data::Door::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Door_DoorData_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Door_DoorData_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_DoorData_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_DoorData_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_DoorData_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_DoorData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_DoorData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, hood_open_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, boot_open_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, door_open_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, _impl_.hood_open_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, _impl_.boot_open_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::data::Door, _impl_.door_open_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::data::Door)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::data::Door)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::data::_Door_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::data::_Door_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_DoorData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -67,21 +71,21 @@ const char descriptor_table_protodef_DoorData_2eproto[] PROTOBUF_SECTION_VARIABL
   "\n\004Door\022\021\n\thood_open\030\001 \001(\010\022\021\n\tboot_open\030\002"
   " \001(\010\022\021\n\tdoor_open\030\003 \003(\010b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_DoorData_2eproto_deps[1] = {
+static ::_pbi::once_flag descriptor_table_DoorData_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_DoorData_2eproto = {
+    false, false, 111, descriptor_table_protodef_DoorData_2eproto,
+    "DoorData.proto",
+    &descriptor_table_DoorData_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_DoorData_2eproto::offsets,
+    file_level_metadata_DoorData_2eproto, file_level_enum_descriptors_DoorData_2eproto,
+    file_level_service_descriptors_DoorData_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_DoorData_2eproto_sccs[1] = {
-  &scc_info_Door_DoorData_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_DoorData_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_DoorData_2eproto = {
-  false, false, descriptor_table_protodef_DoorData_2eproto, "DoorData.proto", 111,
-  &descriptor_table_DoorData_2eproto_once, descriptor_table_DoorData_2eproto_sccs, descriptor_table_DoorData_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_DoorData_2eproto::offsets,
-  file_level_metadata_DoorData_2eproto, 1, file_level_enum_descriptors_DoorData_2eproto, file_level_service_descriptors_DoorData_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_DoorData_2eproto_getter() {
+  return &descriptor_table_DoorData_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_DoorData_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_DoorData_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_DoorData_2eproto(&descriptor_table_DoorData_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -89,143 +93,147 @@ namespace data {
 
 // ===================================================================
 
-void Door::InitAsDefaultInstance() {
-}
 class Door::_Internal {
  public:
 };
 
-Door::Door(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  door_open_(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+Door::Door(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.data.Door)
 }
 Door::Door(const Door& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      door_open_(from.door_open_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Door* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.door_open_){from._impl_.door_open_}
+    , decltype(_impl_.hood_open_){}
+    , decltype(_impl_.boot_open_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&hood_open_, &from.hood_open_,
-    static_cast<size_t>(reinterpret_cast<char*>(&boot_open_) -
-    reinterpret_cast<char*>(&hood_open_)) + sizeof(boot_open_));
+  ::memcpy(&_impl_.hood_open_, &from._impl_.hood_open_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.boot_open_) -
+    reinterpret_cast<char*>(&_impl_.hood_open_)) + sizeof(_impl_.boot_open_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.data.Door)
 }
 
-void Door::SharedCtor() {
-  ::memset(&hood_open_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&boot_open_) -
-      reinterpret_cast<char*>(&hood_open_)) + sizeof(boot_open_));
+inline void Door::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.door_open_){arena}
+    , decltype(_impl_.hood_open_){false}
+    , decltype(_impl_.boot_open_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 Door::~Door() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.data.Door)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Door::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void Door::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.door_open_.~RepeatedField();
 }
 
-void Door::ArenaDtor(void* object) {
-  Door* _this = reinterpret_cast< Door* >(object);
-  (void)_this;
-}
-void Door::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void Door::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const Door& Door::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Door_DoorData_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Door::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.data.Door)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  door_open_.Clear();
-  ::memset(&hood_open_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&boot_open_) -
-      reinterpret_cast<char*>(&hood_open_)) + sizeof(boot_open_));
+  _impl_.door_open_.Clear();
+  ::memset(&_impl_.hood_open_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.boot_open_) -
+      reinterpret_cast<char*>(&_impl_.hood_open_)) + sizeof(_impl_.boot_open_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Door::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* Door::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bool hood_open = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          hood_open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.hood_open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool boot_open = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          boot_open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.boot_open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated bool door_open = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedBoolParser(_internal_mutable_door_open(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24) {
+        } else if (static_cast<uint8_t>(tag) == 24) {
           _internal_add_door_open(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Door::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Door::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.data.Door)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool hood_open = 1;
-  if (this->hood_open() != 0) {
+  if (this->_internal_hood_open() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_hood_open(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_hood_open(), target);
   }
 
   // bool boot_open = 2;
-  if (this->boot_open() != 0) {
+  if (this->_internal_boot_open() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_boot_open(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_boot_open(), target);
   }
 
   // repeated bool door_open = 3;
@@ -234,7 +242,7 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.data.Door)
@@ -245,7 +253,7 @@ size_t Door::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.data.Door)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -255,70 +263,47 @@ size_t Door::ByteSizeLong() const {
     size_t data_size = 1UL * count;
     if (data_size > 0) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _door_open_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
   // bool hood_open = 1;
-  if (this->hood_open() != 0) {
+  if (this->_internal_hood_open() != 0) {
     total_size += 1 + 1;
   }
 
   // bool boot_open = 2;
-  if (this->boot_open() != 0) {
+  if (this->_internal_boot_open() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Door::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.data.Door)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Door* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Door>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.data.Door)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.data.Door)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Door::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Door::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Door::GetClassData() const { return &_class_data_; }
 
-void Door::MergeFrom(const Door& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Door)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void Door::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Door*>(&to_msg);
+  auto& from = static_cast<const Door&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.data.Door)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  door_open_.MergeFrom(from.door_open_);
-  if (from.hood_open() != 0) {
-    _internal_set_hood_open(from._internal_hood_open());
+  _this->_impl_.door_open_.MergeFrom(from._impl_.door_open_);
+  if (from._internal_hood_open() != 0) {
+    _this->_internal_set_hood_open(from._internal_hood_open());
   }
-  if (from.boot_open() != 0) {
-    _internal_set_boot_open(from._internal_boot_open());
+  if (from._internal_boot_open() != 0) {
+    _this->_internal_set_boot_open(from._internal_boot_open());
   }
-}
-
-void Door::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.data.Door)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Door::CopyFrom(const Door& from) {
@@ -334,20 +319,21 @@ bool Door::IsInitialized() const {
 
 void Door::InternalSwap(Door* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  door_open_.InternalSwap(&other->door_open_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.door_open_.InternalSwap(&other->_impl_.door_open_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Door, boot_open_)
-      + sizeof(Door::boot_open_)
-      - PROTOBUF_FIELD_OFFSET(Door, hood_open_)>(
-          reinterpret_cast<char*>(&hood_open_),
-          reinterpret_cast<char*>(&other->hood_open_));
+      PROTOBUF_FIELD_OFFSET(Door, _impl_.boot_open_)
+      + sizeof(Door::_impl_.boot_open_)
+      - PROTOBUF_FIELD_OFFSET(Door, _impl_.hood_open_)>(
+          reinterpret_cast<char*>(&_impl_.hood_open_),
+          reinterpret_cast<char*>(&other->_impl_.hood_open_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Door::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_DoorData_2eproto_getter, &descriptor_table_DoorData_2eproto_once,
+      file_level_metadata_DoorData_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace data
@@ -355,7 +341,8 @@ void Door::InternalSwap(Door* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Door* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Door >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::data::Door*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::data::Door >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::data::Door >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

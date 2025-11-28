@@ -14,51 +14,54 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace messages {
-class VideoFocusIndicationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VideoFocusIndication> _instance;
-} _VideoFocusIndication_default_instance_;
+PROTOBUF_CONSTEXPR VideoFocusIndication::VideoFocusIndication(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.focus_mode_)*/0
+  , /*decltype(_impl_.unrequested_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct VideoFocusIndicationDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VideoFocusIndicationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VideoFocusIndicationDefaultTypeInternal() {}
+  union {
+    VideoFocusIndication _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VideoFocusIndicationDefaultTypeInternal _VideoFocusIndication_default_instance_;
 }  // namespace messages
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_VideoFocusIndication_VideoFocusIndicationMessage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_VideoFocusIndicationMessage_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_VideoFocusIndicationMessage_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_VideoFocusIndicationMessage_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::messages::_VideoFocusIndication_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::messages::VideoFocusIndication();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::messages::VideoFocusIndication::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VideoFocusIndication_VideoFocusIndicationMessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VideoFocusIndication_VideoFocusIndicationMessage_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_VideoFocusIndicationMessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_VideoFocusIndicationMessage_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_VideoFocusIndicationMessage_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_VideoFocusIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_VideoFocusIndicationMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::VideoFocusIndication, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::VideoFocusIndication, focus_mode_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::VideoFocusIndication, unrequested_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::VideoFocusIndication, _impl_.focus_mode_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::VideoFocusIndication, _impl_.unrequested_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::messages::VideoFocusIndication)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::messages::VideoFocusIndication)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::messages::_VideoFocusIndication_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::messages::_VideoFocusIndication_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_VideoFocusIndicationMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -69,22 +72,24 @@ const char descriptor_table_protodef_VideoFocusIndicationMessage_2eproto[] PROTO
   "oFocusMode.Enum\022\023\n\013unrequested\030\002 \001(\010b\006pr"
   "oto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_VideoFocusIndicationMessage_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_VideoFocusIndicationMessage_2eproto_deps[1] = {
   &::descriptor_table_VideoFocusModeEnum_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_VideoFocusIndicationMessage_2eproto_sccs[1] = {
-  &scc_info_VideoFocusIndication_VideoFocusIndicationMessage_2eproto.base,
+static ::_pbi::once_flag descriptor_table_VideoFocusIndicationMessage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_VideoFocusIndicationMessage_2eproto = {
+    false, false, 204, descriptor_table_protodef_VideoFocusIndicationMessage_2eproto,
+    "VideoFocusIndicationMessage.proto",
+    &descriptor_table_VideoFocusIndicationMessage_2eproto_once, descriptor_table_VideoFocusIndicationMessage_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_VideoFocusIndicationMessage_2eproto::offsets,
+    file_level_metadata_VideoFocusIndicationMessage_2eproto, file_level_enum_descriptors_VideoFocusIndicationMessage_2eproto,
+    file_level_service_descriptors_VideoFocusIndicationMessage_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_VideoFocusIndicationMessage_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_VideoFocusIndicationMessage_2eproto = {
-  false, false, descriptor_table_protodef_VideoFocusIndicationMessage_2eproto, "VideoFocusIndicationMessage.proto", 204,
-  &descriptor_table_VideoFocusIndicationMessage_2eproto_once, descriptor_table_VideoFocusIndicationMessage_2eproto_sccs, descriptor_table_VideoFocusIndicationMessage_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_VideoFocusIndicationMessage_2eproto::offsets,
-  file_level_metadata_VideoFocusIndicationMessage_2eproto, 1, file_level_enum_descriptors_VideoFocusIndicationMessage_2eproto, file_level_service_descriptors_VideoFocusIndicationMessage_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_VideoFocusIndicationMessage_2eproto_getter() {
+  return &descriptor_table_VideoFocusIndicationMessage_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_VideoFocusIndicationMessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_VideoFocusIndicationMessage_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_VideoFocusIndicationMessage_2eproto(&descriptor_table_VideoFocusIndicationMessage_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -92,136 +97,138 @@ namespace messages {
 
 // ===================================================================
 
-void VideoFocusIndication::InitAsDefaultInstance() {
-}
 class VideoFocusIndication::_Internal {
  public:
 };
 
-VideoFocusIndication::VideoFocusIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+VideoFocusIndication::VideoFocusIndication(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.messages.VideoFocusIndication)
 }
 VideoFocusIndication::VideoFocusIndication(const VideoFocusIndication& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VideoFocusIndication* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.focus_mode_){}
+    , decltype(_impl_.unrequested_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&focus_mode_, &from.focus_mode_,
-    static_cast<size_t>(reinterpret_cast<char*>(&unrequested_) -
-    reinterpret_cast<char*>(&focus_mode_)) + sizeof(unrequested_));
+  ::memcpy(&_impl_.focus_mode_, &from._impl_.focus_mode_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.unrequested_) -
+    reinterpret_cast<char*>(&_impl_.focus_mode_)) + sizeof(_impl_.unrequested_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.messages.VideoFocusIndication)
 }
 
-void VideoFocusIndication::SharedCtor() {
-  ::memset(&focus_mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&unrequested_) -
-      reinterpret_cast<char*>(&focus_mode_)) + sizeof(unrequested_));
+inline void VideoFocusIndication::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.focus_mode_){0}
+    , decltype(_impl_.unrequested_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 VideoFocusIndication::~VideoFocusIndication() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.messages.VideoFocusIndication)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void VideoFocusIndication::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void VideoFocusIndication::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void VideoFocusIndication::ArenaDtor(void* object) {
-  VideoFocusIndication* _this = reinterpret_cast< VideoFocusIndication* >(object);
-  (void)_this;
-}
-void VideoFocusIndication::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void VideoFocusIndication::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const VideoFocusIndication& VideoFocusIndication::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VideoFocusIndication_VideoFocusIndicationMessage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void VideoFocusIndication::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.messages.VideoFocusIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&focus_mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&unrequested_) -
-      reinterpret_cast<char*>(&focus_mode_)) + sizeof(unrequested_));
+  ::memset(&_impl_.focus_mode_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.unrequested_) -
+      reinterpret_cast<char*>(&_impl_.focus_mode_)) + sizeof(_impl_.unrequested_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VideoFocusIndication::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VideoFocusIndication::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .f1x.aasdk.proto.enums.VideoFocusMode.Enum focus_mode = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_focus_mode(static_cast<::f1x::aasdk::proto::enums::VideoFocusMode_Enum>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool unrequested = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          unrequested_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.unrequested_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* VideoFocusIndication::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* VideoFocusIndication::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.messages.VideoFocusIndication)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.VideoFocusMode.Enum focus_mode = 1;
-  if (this->focus_mode() != 0) {
+  if (this->_internal_focus_mode() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_focus_mode(), target);
   }
 
   // bool unrequested = 2;
-  if (this->unrequested() != 0) {
+  if (this->_internal_unrequested() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_unrequested(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_unrequested(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.messages.VideoFocusIndication)
@@ -232,65 +239,46 @@ size_t VideoFocusIndication::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.messages.VideoFocusIndication)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.VideoFocusMode.Enum focus_mode = 1;
-  if (this->focus_mode() != 0) {
+  if (this->_internal_focus_mode() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_focus_mode());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_focus_mode());
   }
 
   // bool unrequested = 2;
-  if (this->unrequested() != 0) {
+  if (this->_internal_unrequested() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void VideoFocusIndication::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.messages.VideoFocusIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VideoFocusIndication* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VideoFocusIndication>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.messages.VideoFocusIndication)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.messages.VideoFocusIndication)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VideoFocusIndication::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    VideoFocusIndication::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VideoFocusIndication::GetClassData() const { return &_class_data_; }
 
-void VideoFocusIndication::MergeFrom(const VideoFocusIndication& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.VideoFocusIndication)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void VideoFocusIndication::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<VideoFocusIndication*>(&to_msg);
+  auto& from = static_cast<const VideoFocusIndication&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.VideoFocusIndication)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.focus_mode() != 0) {
-    _internal_set_focus_mode(from._internal_focus_mode());
+  if (from._internal_focus_mode() != 0) {
+    _this->_internal_set_focus_mode(from._internal_focus_mode());
   }
-  if (from.unrequested() != 0) {
-    _internal_set_unrequested(from._internal_unrequested());
+  if (from._internal_unrequested() != 0) {
+    _this->_internal_set_unrequested(from._internal_unrequested());
   }
-}
-
-void VideoFocusIndication::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.messages.VideoFocusIndication)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void VideoFocusIndication::CopyFrom(const VideoFocusIndication& from) {
@@ -306,19 +294,20 @@ bool VideoFocusIndication::IsInitialized() const {
 
 void VideoFocusIndication::InternalSwap(VideoFocusIndication* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VideoFocusIndication, unrequested_)
-      + sizeof(VideoFocusIndication::unrequested_)
-      - PROTOBUF_FIELD_OFFSET(VideoFocusIndication, focus_mode_)>(
-          reinterpret_cast<char*>(&focus_mode_),
-          reinterpret_cast<char*>(&other->focus_mode_));
+      PROTOBUF_FIELD_OFFSET(VideoFocusIndication, _impl_.unrequested_)
+      + sizeof(VideoFocusIndication::_impl_.unrequested_)
+      - PROTOBUF_FIELD_OFFSET(VideoFocusIndication, _impl_.focus_mode_)>(
+          reinterpret_cast<char*>(&_impl_.focus_mode_),
+          reinterpret_cast<char*>(&other->_impl_.focus_mode_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VideoFocusIndication::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_VideoFocusIndicationMessage_2eproto_getter, &descriptor_table_VideoFocusIndicationMessage_2eproto_once,
+      file_level_metadata_VideoFocusIndicationMessage_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messages
@@ -326,7 +315,8 @@ void VideoFocusIndication::InternalSwap(VideoFocusIndication* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::VideoFocusIndication* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::VideoFocusIndication >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::VideoFocusIndication*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::VideoFocusIndication >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::messages::VideoFocusIndication >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

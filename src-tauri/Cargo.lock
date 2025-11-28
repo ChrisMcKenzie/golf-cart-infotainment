@@ -1473,6 +1473,7 @@ name = "golf-cart-infotainment"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "base64 0.22.1",
  "bindgen 0.69.5",
  "cc",
  "cpal",

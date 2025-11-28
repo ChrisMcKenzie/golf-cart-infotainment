@@ -27,6 +27,10 @@ serde_json = "1"
 tokio = { version = "1", features = ["full"] }
 anyhow = "1.0"
 thiserror = "1.0"
+base64 = "0.22"
+
+# Video decoding support - disabled for now due to threading issues
+# ffmpeg-next = "7.0"
 
 # Audio support
 rodio = "0.18"

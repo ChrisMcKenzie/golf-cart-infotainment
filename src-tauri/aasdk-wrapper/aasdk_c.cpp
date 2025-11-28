@@ -37,103 +37,108 @@
 
 using namespace f1x::aasdk;
 
+// Forward declarations
+struct AASDKContext;
+
 // Event handlers that forward to C callbacks
 class VideoEventHandler : public channel::av::IVideoServiceChannelEventHandler {
 public:
-    VideoEventHandler(VideoFrameCallback cb, void* ud) : callback_(cb), user_data_(ud) {}
-    
-    void onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) override {
-        // TODO: Handle channel open
-    }
-    
-    void onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) override {
-        // TODO: Handle setup request
-    }
-    
-    void onAVChannelStartIndication(const proto::messages::AVChannelStartIndication& indication) override {
-        // TODO: Handle start indication
-    }
-    
-    void onAVChannelStopIndication(const proto::messages::AVChannelStopIndication& indication) override {
-        // TODO: Handle stop indication
-    }
-    
+    VideoEventHandler(VideoFrameCallback cb, void* ud, AASDKContext* ctx)
+        : callback_(cb), user_data_(ud), ctx_(ctx),
+          video_width_(1280), video_height_(720) {}
+
+    void onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) override;
+    void onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) override;
+
+    void onAVChannelStartIndication(const proto::messages::AVChannelStartIndication& indication) override;
+    void onAVChannelStopIndication(const proto::messages::AVChannelStopIndication& indication) override;
+
     void onAVMediaWithTimestampIndication(messenger::Timestamp::ValueType timestamp, const common::DataConstBuffer& buffer) override {
-        if (callback_ && buffer.cdata) {
-            // Extract video dimensions from buffer or protocol
-            uint32_t width = 1280;  // Default, will be set during setup
-            uint32_t height = 720;
-            uint32_t stride = width * 4; // RGBA
-            
-            callback_(buffer.cdata, width, height, stride, user_data_);
+        // Don't log every frame - too verbose
+        if (callback_ && buffer.cdata && buffer.size > 0) {
+            uint32_t buffer_size = static_cast<uint32_t>(buffer.size);
+            callback_(buffer.cdata, video_width_, video_height_, buffer_size, user_data_);
         }
     }
-    
+
     void onAVMediaIndication(const common::DataConstBuffer& buffer) override {
-        // Similar to timestamp version
-        if (callback_ && buffer.cdata) {
-            uint32_t width = 1280;
-            uint32_t height = 720;
-            uint32_t stride = width * 4;
-            callback_(buffer.cdata, width, height, stride, user_data_);
+        // Don't log every frame - too verbose
+        if (callback_ && buffer.cdata && buffer.size > 0) {
+            uint32_t buffer_size = static_cast<uint32_t>(buffer.size);
+            callback_(buffer.cdata, video_width_, video_height_, buffer_size, user_data_);
         }
     }
-    
-    void onVideoFocusRequest(const proto::messages::VideoFocusRequest& request) override {
-        // TODO: Handle focus request
-    }
-    
-    void onChannelError(const error::Error& e) override {
-        std::cerr << "Video channel error: " << e.what() << std::endl;
-    }
+
+    void onVideoFocusRequest(const proto::messages::VideoFocusRequest& request) override;
+    void onChannelError(const error::Error& e) override;
 
 private:
     VideoFrameCallback callback_;
     void* user_data_;
+    AASDKContext* ctx_;
+    uint32_t video_width_;
+    uint32_t video_height_;
 };
 
 class AudioEventHandler : public channel::av::IAudioServiceChannelEventHandler {
 public:
-    AudioEventHandler(AudioDataCallback cb, void* ud) : callback_(cb), user_data_(ud) {}
-    
-    void onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) override {}
-    void onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) override {}
-    void onAVChannelStartIndication(const proto::messages::AVChannelStartIndication& indication) override {}
-    void onAVChannelStopIndication(const proto::messages::AVChannelStopIndication& indication) override {}
-    
+    AudioEventHandler(AudioDataCallback cb, void* ud, AASDKContext* ctx, channel::av::AudioServiceChannel::Pointer* channel_ptr)
+        : callback_(cb), user_data_(ud), ctx_(ctx), channel_ptr_(channel_ptr),
+          sample_rate_(48000), channels_(2), bit_depth_(16) {}
+
+    void onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) override;
+    void onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) override;
+
+    void onAVChannelStartIndication(const proto::messages::AVChannelStartIndication& indication) override {
+        std::cerr << "Audio stream started" << std::endl;
+
+        // Continue receiving on audio channel
+        if (ctx_ && channel_ptr_ && *channel_ptr_) {
+            // Audio event handlers are shared pointers managed by context
+        }
+    }
+
+    void onAVChannelStopIndication(const proto::messages::AVChannelStopIndication& indication) override {
+        std::cerr << "Audio stream stopped" << std::endl;
+
+        // Continue receiving on audio channel
+        if (ctx_ && channel_ptr_ && *channel_ptr_) {
+            // Audio event handlers are shared pointers managed by context
+        }
+    }
+
     void onAVMediaWithTimestampIndication(messenger::Timestamp::ValueType timestamp, const common::DataConstBuffer& buffer) override {
         if (callback_ && buffer.cdata) {
-            // Audio is typically 16-bit PCM
+            // Use configured audio parameters
             const int16_t* samples = reinterpret_cast<const int16_t*>(buffer.cdata);
-            uint32_t sample_count = buffer.size / sizeof(int16_t);
-            uint32_t channels = 2; // Stereo
-            uint32_t sample_rate = 48000; // Default Android Auto rate
-            
-            callback_(samples, sample_count, channels, sample_rate, user_data_);
+            uint32_t sample_count = buffer.size / (bit_depth_ / 8);
+            callback_(samples, sample_count, channels_, sample_rate_, user_data_);
         }
     }
-    
+
     void onAVMediaIndication(const common::DataConstBuffer& buffer) override {
         if (callback_ && buffer.cdata) {
+            // Use configured audio parameters
             const int16_t* samples = reinterpret_cast<const int16_t*>(buffer.cdata);
-            uint32_t sample_count = buffer.size / sizeof(int16_t);
-            uint32_t channels = 2;
-            uint32_t sample_rate = 48000;
-            callback_(samples, sample_count, channels, sample_rate, user_data_);
+            uint32_t sample_count = buffer.size / (bit_depth_ / 8);
+            callback_(samples, sample_count, channels_, sample_rate_, user_data_);
         }
     }
-    
+
     void onChannelError(const error::Error& e) override {
-        std::cerr << "Audio channel error: " << e.what() << std::endl;
+        std::cerr << "Audio channel error: " << e.what()
+                  << " (code: " << (int)e.getCode() << ", native: " << e.getNativeCode() << ")" << std::endl;
     }
 
 private:
     AudioDataCallback callback_;
     void* user_data_;
+    AASDKContext* ctx_;
+    channel::av::AudioServiceChannel::Pointer* channel_ptr_;
+    uint32_t sample_rate_;
+    uint32_t channels_;
+    uint32_t bit_depth_;
 };
-
-// Forward declaration
-struct AASDKContext;
 
 // Control channel event handler (uses forward declaration, methods implemented after AASDKContext is defined)
 class ControlEventHandler : public channel::control::IControlServiceChannelEventHandler {
@@ -169,6 +174,7 @@ struct AASDKContext {
     
     usb::IAOAPDevice::Pointer aoapDevice;
     transport::USBTransport::Pointer transport;
+    messenger::ICryptor::Pointer cryptor;
     messenger::Messenger::Pointer messenger;
     messenger::MessageInStream::Pointer messageInStream;
     messenger::MessageOutStream::Pointer messageOutStream;
@@ -179,9 +185,19 @@ struct AASDKContext {
     channel::av::AudioServiceChannel::Pointer systemAudioChannel;
     channel::input::InputServiceChannel::Pointer inputChannel;
     channel::control::ControlServiceChannel::Pointer controlChannel;
-    
-    std::unique_ptr<VideoEventHandler> videoEventHandler;
-    std::unique_ptr<AudioEventHandler> audioEventHandler;
+
+    // Strands for channel thread safety - must be kept alive
+    std::unique_ptr<boost::asio::io_service::strand> controlStrand;
+    std::unique_ptr<boost::asio::io_service::strand> videoStrand;
+    std::unique_ptr<boost::asio::io_service::strand> mediaAudioStrand;
+    std::unique_ptr<boost::asio::io_service::strand> speechAudioStrand;
+    std::unique_ptr<boost::asio::io_service::strand> systemAudioStrand;
+    std::unique_ptr<boost::asio::io_service::strand> inputStrand;
+
+    std::shared_ptr<VideoEventHandler> videoEventHandler;
+    std::shared_ptr<AudioEventHandler> audioEventHandler;
+    std::shared_ptr<AudioEventHandler> speechAudioEventHandler;
+    std::shared_ptr<AudioEventHandler> systemAudioEventHandler;
     std::shared_ptr<ControlEventHandler> controlEventHandler;
     
     VideoFrameCallback videoCallback;
@@ -222,11 +238,213 @@ struct AASDKContext {
     }
 };
 
+// Implement VideoEventHandler methods (after AASDKContext is defined)
+void VideoEventHandler::onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) {
+    std::cerr << "Video channel open request, priority: " << request.priority() << std::endl;
+
+    if (!ctx_ || !ctx_->videoChannel) {
+        std::cerr << "Error: videoChannel not available" << std::endl;
+        return;
+    }
+
+    // Send channel open response
+    proto::messages::ChannelOpenResponse response;
+    response.set_status(proto::enums::Status::OK);
+
+    auto promise = channel::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Video channel open response sent" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send video channel open response: " << e.what() << std::endl;
+    });
+
+    ctx_->videoChannel->sendChannelOpenResponse(response, std::move(promise));
+
+    // Continue receiving on video channel
+    if (ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+void VideoEventHandler::onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) {
+    std::cerr << "Video setup request received, config_index: " << request.config_index() << std::endl;
+
+    if (!ctx_ || !ctx_->videoChannel) {
+        std::cerr << "Error: videoChannel not available" << std::endl;
+        return;
+    }
+
+    // TODO: Parse the actual video configuration based on config_index
+    // For now, assume standard 1280x720 H264 video
+    video_width_ = 1280;
+    video_height_ = 720;
+
+    // Send setup response accepting the configuration
+    proto::messages::AVChannelSetupResponse response;
+    response.set_media_status(proto::enums::AVChannelSetupStatus::OK);
+    response.set_max_unacked(1);  // Allow 1 unacknowledged frame
+    response.add_configs(request.config_index());  // Accept the requested config
+
+    std::cerr << "Accepting video config " << request.config_index() << std::endl;
+
+    auto promise = channel::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Video setup response sent" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send video setup response: " << e.what() << std::endl;
+    });
+
+    ctx_->videoChannel->sendAVChannelSetupResponse(response, std::move(promise));
+
+    // Continue receiving on video channel
+    if (ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+void VideoEventHandler::onAVChannelStartIndication(const proto::messages::AVChannelStartIndication& /*indication*/) {
+    std::cerr << "Video stream started" << std::endl;
+    // Video frames will now start arriving in onAVMediaIndication/onAVMediaWithTimestampIndication
+
+    // Continue receiving on video channel
+    if (ctx_ && ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+void VideoEventHandler::onAVChannelStopIndication(const proto::messages::AVChannelStopIndication& /*indication*/) {
+    std::cerr << "Video stream stopped" << std::endl;
+
+    // Continue receiving on video channel
+    if (ctx_ && ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+void VideoEventHandler::onVideoFocusRequest(const proto::messages::VideoFocusRequest& request) {
+    std::cerr << "Video focus request received, mode: " << request.focus_mode()
+              << ", reason: " << request.focus_reason() << std::endl;
+
+    if (!ctx_ || !ctx_->videoChannel) {
+        std::cerr << "Error: videoChannel not available for focus request" << std::endl;
+        return;
+    }
+
+    // Send video focus indication to grant focus
+    proto::messages::VideoFocusIndication indication;
+    indication.set_focus_mode(request.focus_mode());
+    indication.set_unrequested(false);
+
+    std::cerr << "Sending video focus indication (granting focus)" << std::endl;
+
+    auto promise = channel::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Video focus indication sent successfully" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send video focus indication: " << e.what() << std::endl;
+    });
+
+    ctx_->videoChannel->sendVideoFocusIndication(indication, std::move(promise));
+
+    // Continue receiving on video channel
+    if (ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+void VideoEventHandler::onChannelError(const error::Error& e) {
+    std::cerr << "Video channel error: " << e.what()
+              << " (code: " << (int)e.getCode() << ", native: " << e.getNativeCode() << ")" << std::endl;
+
+    // Try to continue receiving despite error
+    if (ctx_ && ctx_->videoChannel && ctx_->videoEventHandler) {
+        ctx_->videoChannel->receive(ctx_->videoEventHandler);
+    }
+}
+
+// Implement AudioEventHandler methods (after AASDKContext is defined)
+void AudioEventHandler::onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) {
+    std::cerr << "Audio channel open request, priority: " << request.priority() << std::endl;
+
+    if (!ctx_ || !channel_ptr_ || !*channel_ptr_) {
+        std::cerr << "Error: audio channel not available" << std::endl;
+        return;
+    }
+
+    // Send channel open response
+    proto::messages::ChannelOpenResponse response;
+    response.set_status(proto::enums::Status::OK);
+
+    auto promise = channel::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Audio channel open response sent" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send audio channel open response: " << e.what() << std::endl;
+    });
+
+    (*channel_ptr_)->sendChannelOpenResponse(response, std::move(promise));
+
+    // Continue receiving on audio channel - handler is managed by context
+    // The channel will automatically continue receiving after each message
+}
+
+void AudioEventHandler::onAVChannelSetupRequest(const proto::messages::AVChannelSetupRequest& request) {
+    std::cerr << "Audio setup request received, config_index: " << request.config_index() << std::endl;
+
+    if (!ctx_ || !channel_ptr_ || !*channel_ptr_) {
+        std::cerr << "Error: audio channel not available" << std::endl;
+        return;
+    }
+
+    // TODO: Parse the actual audio configuration based on config_index
+    // For now, assume standard 48kHz 16-bit stereo PCM
+    sample_rate_ = 48000;
+    channels_ = 2;
+    bit_depth_ = 16;
+
+    // Send setup response accepting the configuration
+    proto::messages::AVChannelSetupResponse response;
+    response.set_media_status(proto::enums::AVChannelSetupStatus::OK);
+    response.set_max_unacked(1);  // Allow 1 unacknowledged frame
+    response.add_configs(request.config_index());  // Accept the requested config
+
+    std::cerr << "Accepting audio config " << request.config_index() << std::endl;
+
+    auto promise = channel::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Audio setup response sent" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send audio setup response: " << e.what() << std::endl;
+    });
+
+    (*channel_ptr_)->sendAVChannelSetupResponse(response, std::move(promise));
+
+    // Continue receiving on audio channel - handler is managed by context
+    // The channel will automatically continue receiving after each message
+}
+
 // Helper function to set up device connection
 static void setupDeviceConnection(AASDKContext* ctx, usb::DeviceHandle deviceHandle) {
     try {
         std::cerr << "Setting up device connection..." << std::endl;
-        
+
+        // Detach kernel driver if active (fixes LIBUSB_ERROR_BUSY)
+        // Check interface 0 (AOAP uses interface 0)
+        int kernelDriverActive = libusb_kernel_driver_active(deviceHandle.get(), 0);
+        if (kernelDriverActive == 1) {
+            std::cerr << "Kernel driver active on interface 0, detaching..." << std::endl;
+            int detachResult = libusb_detach_kernel_driver(deviceHandle.get(), 0);
+            if (detachResult == 0) {
+                std::cerr << "Successfully detached kernel driver" << std::endl;
+            } else {
+                std::cerr << "Warning: Failed to detach kernel driver: " << libusb_error_name(detachResult) << std::endl;
+            }
+        } else if (kernelDriverActive == 0) {
+            std::cerr << "No kernel driver active on interface 0" << std::endl;
+        } else {
+            std::cerr << "Warning: Could not check kernel driver status: " << libusb_error_name(kernelDriverActive) << std::endl;
+        }
+
         // Create AOAPDevice from handle
         ctx->aoapDevice = usb::AOAPDevice::create(*ctx->usbWrapper, ctx->ioService, deviceHandle);
         if (!ctx->aoapDevice) {
@@ -239,28 +457,30 @@ static void setupDeviceConnection(AASDKContext* ctx, usb::DeviceHandle deviceHan
         
         // Create SSL wrapper
         auto sslWrapper = std::make_shared<transport::SSLWrapper>();
-        
-        // Create cryptor
-        auto cryptor = std::make_shared<messenger::Cryptor>(sslWrapper);
-        cryptor->init();
-        
-        // Create message streams
+
+        // Create cryptor and store it in context
+        ctx->cryptor = std::make_shared<messenger::Cryptor>(sslWrapper);
+        ctx->cryptor->init();
+
+        // Create message streams using the stored cryptor
         ctx->messageInStream = std::make_shared<messenger::MessageInStream>(
-            ctx->ioService, ctx->transport, cryptor
+            ctx->ioService, ctx->transport, ctx->cryptor
         );
         ctx->messageOutStream = std::make_shared<messenger::MessageOutStream>(
-            ctx->ioService, ctx->transport, cryptor
+            ctx->ioService, ctx->transport, ctx->cryptor
         );
         
         // Create messenger
         ctx->messenger = std::make_shared<messenger::Messenger>(
             ctx->ioService, ctx->messageInStream, ctx->messageOutStream
         );
-        
-        // Create control channel
-        boost::asio::io_service::strand controlStrand(ctx->ioService);
+
+        // Create control strand and store it to keep it alive
+        ctx->controlStrand = std::make_unique<boost::asio::io_service::strand>(ctx->ioService);
+
+        // Create control channel using the stored strand
         ctx->controlChannel = std::make_shared<channel::control::ControlServiceChannel>(
-            controlStrand, ctx->messenger
+            *ctx->controlStrand, ctx->messenger
         );
         
         // Create control event handler and store it in context to keep it alive
@@ -297,20 +517,373 @@ static void setupDeviceConnection(AASDKContext* ctx, usb::DeviceHandle deviceHan
 // Implement ControlEventHandler methods (after AASDKContext is defined)
 void ControlEventHandler::onVersionResponse(uint16_t majorCode, uint16_t minorCode, proto::enums::VersionResponseStatus::Enum status) {
     std::cerr << "Version response: " << majorCode << "." << minorCode << " status: " << (int)status << std::endl;
+
+    if (!ctx_ || !ctx_->controlChannel || !ctx_->cryptor) {
+        std::cerr << "ERROR: Cannot initiate handshake - required components missing" << std::endl;
+        return;
+    }
+
+    if (status == proto::enums::VersionResponseStatus::MISMATCH) {
+        std::cerr << "ERROR: Version mismatch!" << std::endl;
+        return;
+    }
+
+    std::cerr << "Begin SSL handshake..." << std::endl;
+
+    try {
+        // Initiate SSL handshake
+        ctx_->cryptor->doHandshake();
+
+        // Read the handshake data we generated
+        auto handshakeBuffer = ctx_->cryptor->readHandshakeBuffer();
+
+        std::cerr << "Sending initial SSL handshake to phone, size: " << handshakeBuffer.size() << std::endl;
+
+        // Send our handshake to the phone
+        auto promise = messenger::SendPromise::defer(ctx_->ioService);
+        promise->then([]() {
+            std::cerr << "Initial SSL handshake sent successfully" << std::endl;
+        }, [](const error::Error& e) {
+            std::cerr << "Failed to send initial SSL handshake: " << e.what() << std::endl;
+        });
+
+        ctx_->controlChannel->sendHandshake(std::move(handshakeBuffer), std::move(promise));
+
+        // Now wait for the phone's response
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+        std::cerr << "Waiting for phone's SSL handshake response..." << std::endl;
+
+    } catch (const error::Error& e) {
+        std::cerr << "Handshake error: " << e.what() << std::endl;
+    }
 }
 
 void ControlEventHandler::onHandshake(const common::DataConstBuffer& payload) {
-    std::cerr << "Handshake received" << std::endl;
-    // TODO: Complete handshake and set up service channels
+    std::cerr << "Handshake received from phone, payload size: " << payload.size << std::endl;
+
+    if (!ctx_ || !ctx_->controlChannel || !ctx_->cryptor) {
+        std::cerr << "Error: Required components not available for handshake" << std::endl;
+        return;
+    }
+
+    try {
+        // Write the phone's handshake data to the cryptor
+        ctx_->cryptor->writeHandshakeBuffer(payload);
+
+        // Continue the SSL handshake
+        if (!ctx_->cryptor->doHandshake()) {
+            // Handshake not complete yet, need to send more data
+            std::cerr << "Continue SSL handshake..." << std::endl;
+
+            auto handshakeBuffer = ctx_->cryptor->readHandshakeBuffer();
+            std::cerr << "Sending handshake continuation to phone, size: " << handshakeBuffer.size() << std::endl;
+
+            auto promise = messenger::SendPromise::defer(ctx_->ioService);
+            promise->then([]() {
+                std::cerr << "Handshake continuation sent successfully" << std::endl;
+            }, [](const error::Error& e) {
+                std::cerr << "Failed to send handshake continuation: " << e.what() << std::endl;
+            });
+
+            ctx_->controlChannel->sendHandshake(std::move(handshakeBuffer), std::move(promise));
+        } else {
+            // SSL handshake is complete!
+            std::cerr << "SSL handshake completed successfully! Sending Auth Complete..." << std::endl;
+
+            proto::messages::AuthCompleteIndication authCompleteIndication;
+            authCompleteIndication.set_status(proto::enums::Status::OK);
+
+            auto authPromise = messenger::SendPromise::defer(ctx_->ioService);
+            authPromise->then([]() {
+                std::cerr << "Auth complete sent, waiting for service discovery request..." << std::endl;
+            }, [](const error::Error& e) {
+                std::cerr << "Failed to send auth complete: " << e.what() << std::endl;
+            });
+
+            ctx_->controlChannel->sendAuthComplete(authCompleteIndication, std::move(authPromise));
+        }
+
+        // Always re-register to receive the next message
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+
+    } catch (const error::Error& e) {
+        std::cerr << "Handshake error: " << e.what() << std::endl;
+    }
 }
 
 void ControlEventHandler::onServiceDiscoveryRequest(const proto::messages::ServiceDiscoveryRequest& request) {
-    std::cerr << "Service discovery request received" << std::endl;
-    // TODO: Respond with available services
+    auto now = std::chrono::steady_clock::now().time_since_epoch();
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(now).count();
+    std::cerr << "[" << ms << "ms] Service discovery request received" << std::endl;
+
+    if (!ctx_) {
+        std::cerr << "Context is null in onServiceDiscoveryRequest" << std::endl;
+        return;
+    }
+
+    // Create service discovery response
+    proto::messages::ServiceDiscoveryResponse response;
+
+    // Set head unit information (CRITICAL - OpenAuto sets these!)
+    response.set_head_unit_name("GolfCartAuto");
+    response.set_car_model("Golf Cart");
+    response.set_car_year("2025");
+    response.set_car_serial("GC001");
+    response.set_left_hand_drive_vehicle(true);  // Left-hand drive
+    response.set_headunit_manufacturer("Custom");
+    response.set_headunit_model("Infotainment v1");
+    response.set_sw_build("1.0.0");
+    response.set_sw_version("1.0");
+    response.set_can_play_native_media_during_vr(false);
+    response.set_hide_clock(false);
+
+    // Add channels in the EXACT order that OpenAuto uses (critical!)
+    // Order: AV_INPUT, MEDIA_AUDIO, SPEECH_AUDIO, SYSTEM_AUDIO, SENSOR, VIDEO, BLUETOOTH, INPUT
+
+    // 1. Add AV Input service (MANDATORY - for microphone/voice commands) - FIRST!
+    auto* avInputService = response.add_channels();
+    avInputService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::AV_INPUT));
+    auto* avInputChannelData = avInputService->mutable_av_input_channel();
+    avInputChannelData->set_stream_type(proto::enums::AVStreamType::AUDIO);
+    avInputChannelData->set_available_while_in_call(true);
+    auto* avInputConfig = avInputChannelData->mutable_audio_config();
+    avInputConfig->set_sample_rate(16000);
+    avInputConfig->set_bit_depth(16);
+    avInputConfig->set_channel_count(1);
+
+    // 2. Add media audio service with configuration
+    auto* mediaAudioService = response.add_channels();
+    mediaAudioService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::MEDIA_AUDIO));
+    auto* mediaAudioChannelData = mediaAudioService->mutable_av_channel();
+    mediaAudioChannelData->set_stream_type(proto::enums::AVStreamType::AUDIO);
+    mediaAudioChannelData->set_audio_type(proto::enums::AudioType::MEDIA);
+    mediaAudioChannelData->set_available_while_in_call(false);
+    auto* mediaAudioConfig = mediaAudioChannelData->add_audio_configs();
+    mediaAudioConfig->set_sample_rate(48000);
+    mediaAudioConfig->set_bit_depth(16);
+    mediaAudioConfig->set_channel_count(2);
+
+    // 3. Add speech audio service with configuration
+    auto* speechAudioService = response.add_channels();
+    speechAudioService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::SPEECH_AUDIO));
+    auto* speechAudioChannelData = speechAudioService->mutable_av_channel();
+    speechAudioChannelData->set_stream_type(proto::enums::AVStreamType::AUDIO);
+    speechAudioChannelData->set_audio_type(proto::enums::AudioType::SPEECH);
+    speechAudioChannelData->set_available_while_in_call(true);
+    auto* speechAudioConfig = speechAudioChannelData->add_audio_configs();
+    speechAudioConfig->set_sample_rate(16000);
+    speechAudioConfig->set_bit_depth(16);
+    speechAudioConfig->set_channel_count(1);
+
+    // 4. Add system audio service with configuration
+    auto* systemAudioService = response.add_channels();
+    systemAudioService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::SYSTEM_AUDIO));
+    auto* systemAudioChannelData = systemAudioService->mutable_av_channel();
+    systemAudioChannelData->set_stream_type(proto::enums::AVStreamType::AUDIO);
+    systemAudioChannelData->set_audio_type(proto::enums::AudioType::SYSTEM);
+    systemAudioChannelData->set_available_while_in_call(true);
+    auto* systemAudioConfig = systemAudioChannelData->add_audio_configs();
+    systemAudioConfig->set_sample_rate(16000);
+    systemAudioConfig->set_bit_depth(16);
+    systemAudioConfig->set_channel_count(1);
+
+    // 5. Add sensor service (GPS, etc.)
+    auto* sensorService = response.add_channels();
+    sensorService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::SENSOR));
+    // Sensor channel data is optional, phone will query for specific sensors
+
+    // 6. Add video service with configuration
+    auto* videoService = response.add_channels();
+    videoService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::VIDEO));
+    auto* videoChannelData = videoService->mutable_av_channel();
+    videoChannelData->set_stream_type(proto::enums::AVStreamType::VIDEO);
+    videoChannelData->set_available_while_in_call(true);  // Match OpenAuto
+
+    // Add supported video configurations (provide multiple options for phone to choose)
+    // Primary: 480p at 60fps (matches OpenAuto defaults)
+    auto* videoConfig480p60 = videoChannelData->add_video_configs();
+    videoConfig480p60->set_video_resolution(proto::enums::VideoResolution::_480p);
+    videoConfig480p60->set_video_fps(proto::enums::VideoFPS::_60);
+    videoConfig480p60->set_margin_width(0);
+    videoConfig480p60->set_margin_height(0);
+    videoConfig480p60->set_dpi(140);  // Match OpenAuto
+    videoConfig480p60->set_additional_depth(0);
+
+    // Alternative: 720p at 60fps
+    auto* videoConfig720p60 = videoChannelData->add_video_configs();
+    videoConfig720p60->set_video_resolution(proto::enums::VideoResolution::_720p);
+    videoConfig720p60->set_video_fps(proto::enums::VideoFPS::_60);
+    videoConfig720p60->set_margin_width(0);
+    videoConfig720p60->set_margin_height(0);
+    videoConfig720p60->set_dpi(140);
+    videoConfig720p60->set_additional_depth(0);
+
+    // Store primary config for logging
+    auto* videoConfig = videoConfig480p60;
+
+    // 7. Add Bluetooth service (MANDATORY - for phone pairing)
+    auto* bluetoothService = response.add_channels();
+    bluetoothService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::BLUETOOTH));
+    auto* bluetoothChannelData = bluetoothService->mutable_bluetooth_channel();
+    // Set a dummy Bluetooth MAC address (format: XX:XX:XX:XX:XX:XX)
+    bluetoothChannelData->set_adapter_address("00:00:00:00:00:00");
+
+    // 8. Add input service (touchscreen, buttons) with configuration - LAST
+    auto* inputService = response.add_channels();
+    inputService->set_channel_id(static_cast<uint32_t>(messenger::ChannelId::INPUT));
+    auto* inputChannelData = inputService->mutable_input_channel();
+    // Add supported button keycodes (common Android Auto buttons)
+    inputChannelData->add_supported_keycodes(1); // KEYCODE_BACK
+    inputChannelData->add_supported_keycodes(3); // KEYCODE_HOME
+    inputChannelData->add_supported_keycodes(24); // KEYCODE_VOLUME_UP
+    inputChannelData->add_supported_keycodes(25); // KEYCODE_VOLUME_DOWN
+    inputChannelData->add_supported_keycodes(85); // KEYCODE_MEDIA_PLAY_PAUSE
+    inputChannelData->add_supported_keycodes(87); // KEYCODE_MEDIA_NEXT
+    inputChannelData->add_supported_keycodes(88); // KEYCODE_MEDIA_PREVIOUS
+    inputChannelData->add_supported_keycodes(126); // KEYCODE_MEDIA_PLAY
+    inputChannelData->add_supported_keycodes(127); // KEYCODE_MEDIA_PAUSE
+    // Add touchscreen configuration: 1280x720 display
+    auto* touchConfig = inputChannelData->mutable_touch_screen_config();
+    touchConfig->set_width(1280);
+    touchConfig->set_height(720);
+
+    std::cerr << "Sending service discovery response with " << response.channels_size() << " services (with full config data)" << std::endl;
+    std::cerr << "Video config: resolution=" << videoConfig->video_resolution()
+              << " fps=" << videoConfig->video_fps()
+              << " " << videoConfig->margin_width() << "x" << videoConfig->margin_height() << std::endl;
+    std::cerr << "Media audio config: " << mediaAudioConfig->sample_rate() << "Hz "
+              << mediaAudioConfig->bit_depth() << "bit "
+              << mediaAudioConfig->channel_count() << "ch" << std::endl;
+    std::cerr << "Touch config: " << touchConfig->width() << "x" << touchConfig->height() << std::endl;
+
+    // Send the response
+    auto promise = messenger::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Service discovery response sent successfully" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send service discovery response: " << e.what() << std::endl;
+    });
+
+    ctx_->controlChannel->sendServiceDiscoveryResponse(response, std::move(promise));
+
+    // Now set up the service channels
+    std::cerr << "Setting up service channels..." << std::endl;
+
+    // Create video strand and channel
+    ctx_->videoStrand = std::make_unique<boost::asio::io_service::strand>(ctx_->ioService);
+    ctx_->videoChannel = std::make_shared<channel::av::VideoServiceChannel>(
+        *ctx_->videoStrand, ctx_->messenger
+    );
+
+    // Create video event handler
+    ctx_->videoEventHandler = std::make_shared<VideoEventHandler>(ctx_->videoCallback, ctx_->userData, ctx_);
+    ctx_->videoChannel->receive(ctx_->videoEventHandler);
+
+    std::cerr << "Video channel setup complete" << std::endl;
+
+    // Create media audio strand and channel
+    ctx_->mediaAudioStrand = std::make_unique<boost::asio::io_service::strand>(ctx_->ioService);
+    ctx_->mediaAudioChannel = std::make_shared<channel::av::MediaAudioServiceChannel>(
+        *ctx_->mediaAudioStrand, ctx_->messenger
+    );
+
+    // Create audio event handler for media, passing pointer to the channel
+    ctx_->audioEventHandler = std::make_shared<AudioEventHandler>(
+        ctx_->audioCallback, ctx_->userData, ctx_, &ctx_->mediaAudioChannel
+    );
+    ctx_->mediaAudioChannel->receive(ctx_->audioEventHandler);
+
+    std::cerr << "Media audio channel setup complete" << std::endl;
+
+    // Create speech audio strand and channel (for navigation/assistant voice)
+    ctx_->speechAudioStrand = std::make_unique<boost::asio::io_service::strand>(ctx_->ioService);
+    ctx_->speechAudioChannel = std::make_shared<channel::av::SpeechAudioServiceChannel>(
+        *ctx_->speechAudioStrand, ctx_->messenger
+    );
+
+    // Create and store audio event handler for speech audio, passing pointer to the channel
+    ctx_->speechAudioEventHandler = std::make_shared<AudioEventHandler>(
+        ctx_->audioCallback, ctx_->userData, ctx_, &ctx_->speechAudioChannel
+    );
+    ctx_->speechAudioChannel->receive(ctx_->speechAudioEventHandler);
+
+    std::cerr << "Speech audio channel setup complete" << std::endl;
+
+    // Create system audio strand and channel (for Android Auto UI sounds)
+    ctx_->systemAudioStrand = std::make_unique<boost::asio::io_service::strand>(ctx_->ioService);
+    ctx_->systemAudioChannel = std::make_shared<channel::av::SystemAudioServiceChannel>(
+        *ctx_->systemAudioStrand, ctx_->messenger
+    );
+
+    // Create and store audio event handler for system audio, passing pointer to the channel
+    ctx_->systemAudioEventHandler = std::make_shared<AudioEventHandler>(
+        ctx_->audioCallback, ctx_->userData, ctx_, &ctx_->systemAudioChannel
+    );
+    ctx_->systemAudioChannel->receive(ctx_->systemAudioEventHandler);
+
+    std::cerr << "System audio channel setup complete" << std::endl;
+
+    // TODO: Set up input channel for touch/button events
+
+    std::cerr << "Service channels ready, waiting for channel open requests..." << std::endl;
+
+    // Continue receiving messages on control channel
+    if (ctx_->controlChannel && ctx_->controlEventHandler) {
+        std::cerr << "Re-registering control channel after service discovery..." << std::endl;
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+    } else {
+        std::cerr << "ERROR: Control channel or handler is null after service discovery!" << std::endl;
+    }
+
+    // Debug: Log channel registration status
+    std::cerr << "Channel registration status:" << std::endl;
+    std::cerr << "  - Video channel: " << (ctx_->videoChannel ? "registered" : "NULL") << std::endl;
+    std::cerr << "  - Media audio channel: " << (ctx_->mediaAudioChannel ? "registered" : "NULL") << std::endl;
+    std::cerr << "  - Speech audio channel: " << (ctx_->speechAudioChannel ? "registered" : "NULL") << std::endl;
+    std::cerr << "  - System audio channel: " << (ctx_->systemAudioChannel ? "registered" : "NULL") << std::endl;
+    std::cerr << "  - Control channel: " << (ctx_->controlChannel ? "registered" : "NULL") << std::endl;
+
+    // Set up a timer to log if we don't receive any channel open requests
+    auto timeout_timer = std::make_shared<boost::asio::deadline_timer>(ctx_->ioService);
+    timeout_timer->expires_from_now(boost::posix_time::seconds(5));
+    timeout_timer->async_wait([](const boost::system::error_code& ec) {
+        if (!ec) {
+            std::cerr << "========================================" << std::endl;
+            std::cerr << "WARNING: 5 seconds passed since service discovery" << std::endl;
+            std::cerr << "No channel open requests received from phone yet!" << std::endl;
+            std::cerr << "Phone may be showing 'incompatible software' error" << std::endl;
+            std::cerr << "========================================" << std::endl;
+        }
+    });
 }
 
 void ControlEventHandler::onAudioFocusRequest(const proto::messages::AudioFocusRequest& request) {
-    // TODO: Handle audio focus
+    std::cerr << "Audio focus request received" << std::endl;
+
+    if (!ctx_) {
+        std::cerr << "Context is null in onAudioFocusRequest" << std::endl;
+        return;
+    }
+
+    // Grant audio focus
+    proto::messages::AudioFocusResponse response;
+    response.set_audio_focus_state(proto::enums::AudioFocusState::GAIN);
+
+    std::cerr << "Granting audio focus" << std::endl;
+
+    auto promise = messenger::SendPromise::defer(ctx_->ioService);
+    promise->then([]() {
+        std::cerr << "Audio focus response sent" << std::endl;
+    }, [](const error::Error& e) {
+        std::cerr << "Failed to send audio focus response: " << e.what() << std::endl;
+    });
+
+    ctx_->controlChannel->sendAudioFocusResponse(response, std::move(promise));
+
+    // Continue receiving messages on control channel
+    if (ctx_->controlChannel && ctx_->controlEventHandler) {
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+    }
 }
 
 void ControlEventHandler::onShutdownRequest(const proto::messages::ShutdownRequest& request) {
@@ -325,18 +898,39 @@ void ControlEventHandler::onShutdownRequest(const proto::messages::ShutdownReque
 
 void ControlEventHandler::onShutdownResponse(const proto::messages::ShutdownResponse& response) {
     std::cerr << "Shutdown response received" << std::endl;
+    // Note: Not re-registering here since we're shutting down
 }
 
 void ControlEventHandler::onNavigationFocusRequest(const proto::messages::NavigationFocusRequest& request) {
     // TODO: Handle navigation focus
+
+    // Continue receiving messages on control channel
+    if (ctx_ && ctx_->controlChannel && ctx_->controlEventHandler) {
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+    }
 }
 
 void ControlEventHandler::onPingResponse(const proto::messages::PingResponse& response) {
     // TODO: Handle ping response
+
+    // Continue receiving messages on control channel
+    if (ctx_ && ctx_->controlChannel && ctx_->controlEventHandler) {
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+    }
 }
 
 void ControlEventHandler::onChannelError(const error::Error& e) {
-    std::cerr << "Control channel error: " << e.what() << std::endl;
+    std::cerr << "========================================" << std::endl;
+    std::cerr << "CONTROL CHANNEL ERROR: " << e.what() << std::endl;
+    std::cerr << "Error code: " << (int)e.getCode() << ", native: " << e.getNativeCode() << std::endl;
+    std::cerr << "This may indicate protocol incompatibility!" << std::endl;
+    std::cerr << "========================================" << std::endl;
+
+    // Continue receiving messages on control channel even after error
+    if (ctx_ && ctx_->controlChannel && ctx_->controlEventHandler) {
+        std::cerr << "Re-registering control channel after error..." << std::endl;
+        ctx_->controlChannel->receive(ctx_->controlEventHandler);
+    }
 }
 
 // C callback wrappers
@@ -384,11 +978,15 @@ AASDKHandle aasdk_init(VideoFrameCallback video_cb, AudioDataCallback audio_cb, 
         ctx->ioThread = std::thread([ctx]() {
             try {
                 while (ctx->running) {
-                    ctx->ioService.run();
-                    if (ctx->running) {
-                        ctx->ioService.reset();
-                    }
-                    libusb_handle_events_completed(ctx->usbContext, nullptr);
+                    // Run io_service with timeout to allow libusb event handling
+                    ctx->ioService.poll();  // Process ready handlers without blocking
+
+                    // Handle libusb events with short timeout
+                    struct timeval tv = {0, 100000}; // 100ms timeout
+                    libusb_handle_events_timeout_completed(ctx->usbContext, &tv, nullptr);
+
+                    // Small sleep to prevent busy waiting
+                    std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 }
             } catch (const std::exception& e) {
                 std::cerr << "IO service thread error: " << e.what() << std::endl;
@@ -453,7 +1051,10 @@ bool aasdk_start(AASDKHandle handle) {
                 
                 // Enumerate already-connected devices - this is the primary method for WSL2
                 std::cerr << "Enumerating already-connected devices (primary method for WSL2)..." << std::endl;
-                
+
+                // Add small delay to let devices stabilize after USB initialization
+                std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
                 usb::DeviceListHandle deviceListHandle;
                 auto listResult = ctx->usbWrapper->getDeviceList(deviceListHandle);
                 
@@ -483,16 +1084,64 @@ bool aasdk_start(AASDKHandle handle) {
                                      << (isAOAP ? " (AOAP mode)" : "") << std::endl;
                             
                             if (isAOAP) {
-                                // Device is already in AOAP mode, try to open it directly
-                                usb::DeviceHandle deviceHandle;
-                                auto openResult = ctx->usbWrapper->open(*deviceIter, deviceHandle);
-                                
-                                if (openResult == 0 && deviceHandle != nullptr) {
-                                    std::cerr << "Device already in AOAP mode, setting up connection..." << std::endl;
-                                    setupDeviceConnection(ctx, deviceHandle);
+                                // Device is already in AOAP mode, try to open it directly with retry logic
+                                // Retry logic for initial connection (handles timing issues)
+                                const int MAX_RETRIES = 3;
+                                bool connected = false;
+
+                                for (int retry = 0; retry < MAX_RETRIES; retry++) {
+                                    usb::DeviceHandle deviceHandle;
+                                    auto openResult = ctx->usbWrapper->open(*deviceIter, deviceHandle);
+
+                                    if (openResult != 0 || deviceHandle == nullptr) {
+                                        std::cerr << "Failed to open AOAP device: " << openResult << std::endl;
+                                        if (retry < MAX_RETRIES - 1) {
+                                            std::cerr << "Retrying open in 300ms..." << std::endl;
+                                            std::this_thread::sleep_for(std::chrono::milliseconds(300));
+                                            continue;
+                                        }
+                                        break;
+                                    }
+
+                                    try {
+                                        if (retry > 0) {
+                                            std::cerr << "Connection attempt " << (retry + 1) << " of " << MAX_RETRIES << "..." << std::endl;
+                                        } else {
+                                            std::cerr << "Device already in AOAP mode, setting up connection..." << std::endl;
+                                        }
+
+                                        setupDeviceConnection(ctx, deviceHandle);
+                                        connected = true;
+                                        std::cerr << "Successfully connected to AOAP device!" << std::endl;
+                                        break; // Success
+                                    } catch (const error::Error& e) {
+                                        std::cerr << "Connection attempt " << (retry + 1) << " failed: " << e.what()
+                                                 << " (code: " << (int)e.getCode() << ", native: " << e.getNativeCode() << ")" << std::endl;
+
+                                        // Device handle is consumed on error, need to reopen
+                                        deviceHandle.reset();
+
+                                        if (retry < MAX_RETRIES - 1) {
+                                            std::cerr << "Retrying in 500ms..." << std::endl;
+                                            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                                        }
+                                    } catch (const std::exception& e) {
+                                        std::cerr << "Connection attempt " << (retry + 1) << " failed: " << e.what() << std::endl;
+
+                                        // Device handle is consumed on error, need to reopen
+                                        deviceHandle.reset();
+
+                                        if (retry < MAX_RETRIES - 1) {
+                                            std::cerr << "Retrying in 500ms..." << std::endl;
+                                            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                                        }
+                                    }
+                                }
+
+                                if (connected) {
                                     break; // Found and connected
                                 } else {
-                                    std::cerr << "Failed to open AOAP device: " << openResult << std::endl;
+                                    std::cerr << "All connection attempts failed, will rely on hotplug..." << std::endl;
                                 }
                             } else if (deviceDescriptor.idVendor == 0x18D1) {
                                 // Google device (likely Android phone) but not in AOAP mode yet

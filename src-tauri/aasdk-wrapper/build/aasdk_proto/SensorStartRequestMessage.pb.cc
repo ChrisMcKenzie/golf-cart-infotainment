@@ -14,51 +14,54 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace f1x {
 namespace aasdk {
 namespace proto {
 namespace messages {
-class SensorStartRequestMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SensorStartRequestMessage> _instance;
-} _SensorStartRequestMessage_default_instance_;
+PROTOBUF_CONSTEXPR SensorStartRequestMessage::SensorStartRequestMessage(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.refresh_interval_)*/int64_t{0}
+  , /*decltype(_impl_.sensor_type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SensorStartRequestMessageDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SensorStartRequestMessageDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SensorStartRequestMessageDefaultTypeInternal() {}
+  union {
+    SensorStartRequestMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SensorStartRequestMessageDefaultTypeInternal _SensorStartRequestMessage_default_instance_;
 }  // namespace messages
 }  // namespace proto
 }  // namespace aasdk
 }  // namespace f1x
-static void InitDefaultsscc_info_SensorStartRequestMessage_SensorStartRequestMessage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_SensorStartRequestMessage_2eproto[1];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_SensorStartRequestMessage_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_SensorStartRequestMessage_2eproto = nullptr;
 
-  {
-    void* ptr = &::f1x::aasdk::proto::messages::_SensorStartRequestMessage_default_instance_;
-    new (ptr) ::f1x::aasdk::proto::messages::SensorStartRequestMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::f1x::aasdk::proto::messages::SensorStartRequestMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SensorStartRequestMessage_SensorStartRequestMessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SensorStartRequestMessage_SensorStartRequestMessage_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_SensorStartRequestMessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_SensorStartRequestMessage_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_SensorStartRequestMessage_2eproto = nullptr;
-
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_SensorStartRequestMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_SensorStartRequestMessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorStartRequestMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorStartRequestMessage, sensor_type_),
-  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorStartRequestMessage, refresh_interval_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorStartRequestMessage, _impl_.sensor_type_),
+  PROTOBUF_FIELD_OFFSET(::f1x::aasdk::proto::messages::SensorStartRequestMessage, _impl_.refresh_interval_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::f1x::aasdk::proto::messages::SensorStartRequestMessage)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::f1x::aasdk::proto::messages::SensorStartRequestMessage)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::f1x::aasdk::proto::messages::_SensorStartRequestMessage_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::f1x::aasdk::proto::messages::_SensorStartRequestMessage_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_SensorStartRequestMessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -69,22 +72,24 @@ const char descriptor_table_protodef_SensorStartRequestMessage_2eproto[] PROTOBU
   "orType.Enum\022\030\n\020refresh_interval\030\002 \001(\003b\006p"
   "roto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_SensorStartRequestMessage_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_SensorStartRequestMessage_2eproto_deps[1] = {
   &::descriptor_table_SensorTypeEnum_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_SensorStartRequestMessage_2eproto_sccs[1] = {
-  &scc_info_SensorStartRequestMessage_SensorStartRequestMessage_2eproto.base,
+static ::_pbi::once_flag descriptor_table_SensorStartRequestMessage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_SensorStartRequestMessage_2eproto = {
+    false, false, 205, descriptor_table_protodef_SensorStartRequestMessage_2eproto,
+    "SensorStartRequestMessage.proto",
+    &descriptor_table_SensorStartRequestMessage_2eproto_once, descriptor_table_SensorStartRequestMessage_2eproto_deps, 1, 1,
+    schemas, file_default_instances, TableStruct_SensorStartRequestMessage_2eproto::offsets,
+    file_level_metadata_SensorStartRequestMessage_2eproto, file_level_enum_descriptors_SensorStartRequestMessage_2eproto,
+    file_level_service_descriptors_SensorStartRequestMessage_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_SensorStartRequestMessage_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_SensorStartRequestMessage_2eproto = {
-  false, false, descriptor_table_protodef_SensorStartRequestMessage_2eproto, "SensorStartRequestMessage.proto", 205,
-  &descriptor_table_SensorStartRequestMessage_2eproto_once, descriptor_table_SensorStartRequestMessage_2eproto_sccs, descriptor_table_SensorStartRequestMessage_2eproto_deps, 1, 1,
-  schemas, file_default_instances, TableStruct_SensorStartRequestMessage_2eproto::offsets,
-  file_level_metadata_SensorStartRequestMessage_2eproto, 1, file_level_enum_descriptors_SensorStartRequestMessage_2eproto, file_level_service_descriptors_SensorStartRequestMessage_2eproto,
-};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_SensorStartRequestMessage_2eproto_getter() {
+  return &descriptor_table_SensorStartRequestMessage_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_SensorStartRequestMessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_SensorStartRequestMessage_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_SensorStartRequestMessage_2eproto(&descriptor_table_SensorStartRequestMessage_2eproto);
 namespace f1x {
 namespace aasdk {
 namespace proto {
@@ -92,136 +97,138 @@ namespace messages {
 
 // ===================================================================
 
-void SensorStartRequestMessage::InitAsDefaultInstance() {
-}
 class SensorStartRequestMessage::_Internal {
  public:
 };
 
-SensorStartRequestMessage::SensorStartRequestMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+SensorStartRequestMessage::SensorStartRequestMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:f1x.aasdk.proto.messages.SensorStartRequestMessage)
 }
 SensorStartRequestMessage::SensorStartRequestMessage(const SensorStartRequestMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SensorStartRequestMessage* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.refresh_interval_){}
+    , decltype(_impl_.sensor_type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&refresh_interval_, &from.refresh_interval_,
-    static_cast<size_t>(reinterpret_cast<char*>(&sensor_type_) -
-    reinterpret_cast<char*>(&refresh_interval_)) + sizeof(sensor_type_));
+  ::memcpy(&_impl_.refresh_interval_, &from._impl_.refresh_interval_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.sensor_type_) -
+    reinterpret_cast<char*>(&_impl_.refresh_interval_)) + sizeof(_impl_.sensor_type_));
   // @@protoc_insertion_point(copy_constructor:f1x.aasdk.proto.messages.SensorStartRequestMessage)
 }
 
-void SensorStartRequestMessage::SharedCtor() {
-  ::memset(&refresh_interval_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sensor_type_) -
-      reinterpret_cast<char*>(&refresh_interval_)) + sizeof(sensor_type_));
+inline void SensorStartRequestMessage::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.refresh_interval_){int64_t{0}}
+    , decltype(_impl_.sensor_type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 SensorStartRequestMessage::~SensorStartRequestMessage() {
   // @@protoc_insertion_point(destructor:f1x.aasdk.proto.messages.SensorStartRequestMessage)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void SensorStartRequestMessage::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void SensorStartRequestMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void SensorStartRequestMessage::ArenaDtor(void* object) {
-  SensorStartRequestMessage* _this = reinterpret_cast< SensorStartRequestMessage* >(object);
-  (void)_this;
-}
-void SensorStartRequestMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void SensorStartRequestMessage::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
-const SensorStartRequestMessage& SensorStartRequestMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SensorStartRequestMessage_SensorStartRequestMessage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SensorStartRequestMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&refresh_interval_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sensor_type_) -
-      reinterpret_cast<char*>(&refresh_interval_)) + sizeof(sensor_type_));
+  ::memset(&_impl_.refresh_interval_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.sensor_type_) -
+      reinterpret_cast<char*>(&_impl_.refresh_interval_)) + sizeof(_impl_.sensor_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SensorStartRequestMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* SensorStartRequestMessage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // .f1x.aasdk.proto.enums.SensorType.Enum sensor_type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_sensor_type(static_cast<::f1x::aasdk::proto::enums::SensorType_Enum>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int64 refresh_interval = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          refresh_interval_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.refresh_interval_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SensorStartRequestMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SensorStartRequestMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .f1x.aasdk.proto.enums.SensorType.Enum sensor_type = 1;
-  if (this->sensor_type() != 0) {
+  if (this->_internal_sensor_type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
       1, this->_internal_sensor_type(), target);
   }
 
   // int64 refresh_interval = 2;
-  if (this->refresh_interval() != 0) {
+  if (this->_internal_refresh_interval() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_refresh_interval(), target);
+    target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_refresh_interval(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:f1x.aasdk.proto.messages.SensorStartRequestMessage)
@@ -232,67 +239,46 @@ size_t SensorStartRequestMessage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int64 refresh_interval = 2;
-  if (this->refresh_interval() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_refresh_interval());
+  if (this->_internal_refresh_interval() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_refresh_interval());
   }
 
   // .f1x.aasdk.proto.enums.SensorType.Enum sensor_type = 1;
-  if (this->sensor_type() != 0) {
+  if (this->_internal_sensor_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_sensor_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_sensor_type());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SensorStartRequestMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SensorStartRequestMessage* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SensorStartRequestMessage>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SensorStartRequestMessage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SensorStartRequestMessage::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SensorStartRequestMessage::GetClassData() const { return &_class_data_; }
 
-void SensorStartRequestMessage::MergeFrom(const SensorStartRequestMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void SensorStartRequestMessage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SensorStartRequestMessage*>(&to_msg);
+  auto& from = static_cast<const SensorStartRequestMessage&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.refresh_interval() != 0) {
-    _internal_set_refresh_interval(from._internal_refresh_interval());
+  if (from._internal_refresh_interval() != 0) {
+    _this->_internal_set_refresh_interval(from._internal_refresh_interval());
   }
-  if (from.sensor_type() != 0) {
-    _internal_set_sensor_type(from._internal_sensor_type());
+  if (from._internal_sensor_type() != 0) {
+    _this->_internal_set_sensor_type(from._internal_sensor_type());
   }
-}
-
-void SensorStartRequestMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:f1x.aasdk.proto.messages.SensorStartRequestMessage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SensorStartRequestMessage::CopyFrom(const SensorStartRequestMessage& from) {
@@ -308,19 +294,20 @@ bool SensorStartRequestMessage::IsInitialized() const {
 
 void SensorStartRequestMessage::InternalSwap(SensorStartRequestMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SensorStartRequestMessage, sensor_type_)
-      + sizeof(SensorStartRequestMessage::sensor_type_)
-      - PROTOBUF_FIELD_OFFSET(SensorStartRequestMessage, refresh_interval_)>(
-          reinterpret_cast<char*>(&refresh_interval_),
-          reinterpret_cast<char*>(&other->refresh_interval_));
+      PROTOBUF_FIELD_OFFSET(SensorStartRequestMessage, _impl_.sensor_type_)
+      + sizeof(SensorStartRequestMessage::_impl_.sensor_type_)
+      - PROTOBUF_FIELD_OFFSET(SensorStartRequestMessage, _impl_.refresh_interval_)>(
+          reinterpret_cast<char*>(&_impl_.refresh_interval_),
+          reinterpret_cast<char*>(&other->_impl_.refresh_interval_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SensorStartRequestMessage::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_SensorStartRequestMessage_2eproto_getter, &descriptor_table_SensorStartRequestMessage_2eproto_once,
+      file_level_metadata_SensorStartRequestMessage_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messages
@@ -328,7 +315,8 @@ void SensorStartRequestMessage::InternalSwap(SensorStartRequestMessage* other) {
 }  // namespace aasdk
 }  // namespace f1x
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::SensorStartRequestMessage* Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::SensorStartRequestMessage >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::f1x::aasdk::proto::messages::SensorStartRequestMessage*
+Arena::CreateMaybeMessage< ::f1x::aasdk::proto::messages::SensorStartRequestMessage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::f1x::aasdk::proto::messages::SensorStartRequestMessage >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
